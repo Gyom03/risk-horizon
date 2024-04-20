@@ -26,11 +26,10 @@ export default function Component() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white">
-                    Protecting the World. One Byte at a Time.
+                  Joignons nos forces pour garantir votre sécurité en ligne.
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Our mission is to make the digital world a safer place for everyone, regardless of their knowledge
-                    of technology.
+                  Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de connaissance technologique.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -38,7 +37,7 @@ export default function Component() {
                     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
                     href="/"
                   >
-                    Get Involved
+                    Plus d'infos
                   </Link>
                 </div>
               </div>
@@ -48,34 +47,34 @@ export default function Component() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">What We Do</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nous faisons</h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                We offer a range of services to help individuals and organizations stay safe in the digital world.
+              Nous proposons une gamme de services pour aider les individus et les organisations à rester en sécurité dans le monde numérique.
               </p>
             </div>
             <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Cybersecurity Training</h3>
+                <h3 className="font-bold tracking-tight">Formation en Cybersécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  We teach best practices for staying safe online.
+                Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Security Consultation</h3>
+                <h3 className="font-bold tracking-tight">Consultation en Sécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Let our experts assess and improve your security posture.
+                Laissez nos experts évaluer et améliorer votre posture de sécurité.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Threat Analysis</h3>
+                <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Stay ahead of cyber threats with our comprehensive analysis.
+                Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Data Protection</h3>
+                <h3 className="font-bold tracking-tight">Protection des Données</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Learn how to keep your data safe from prying eyes.
+                Apprenez à protéger vos données des regards indiscrets.
                 </p>
               </div>
             </div>
@@ -97,9 +96,9 @@ export default function Component() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2 text-gray-50">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Who We Are</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Qui sommes nous ?</h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Meet the team behind our mission to protect the digital world.
+              Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -116,8 +115,8 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">John Doe</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Founder & CEO</p>
+                  <h3 className="font-semibold text-gray-50">Rosin Guillaume</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Président de l'ASBL</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -133,8 +132,8 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Jane Smith</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Founder & CTO</p>
+                  <h3 className="font-semibold text-gray-50">Richard Guillaume</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président de l'ASBL</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -150,8 +149,8 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Bob Johnson</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Head of Security</p>
+                  <h3 className="font-semibold text-gray-50">Alicia Bijnen</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Secrétaire</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -167,8 +166,8 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Sarah Lee</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Head of Training</p>
+                  <h3 className="font-semibold text-gray-50">Julien Legros</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Community Manager</p>
                 </div>
               </div>
             </div>
@@ -177,18 +176,18 @@ export default function Component() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container grid items-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contact Us</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contactez nous</h2>
               <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Reach out to learn more about our programs and services.
+              N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services.
               </p>
             </div>
             <div className="mx-auto w-full max-w-[400px] space-y-4">
               <form className="grid gap-4">
-                <Input placeholder="Name" type="text" />
+                <Input placeholder="Nom" type="text" />
                 <Input placeholder="Email" type="email" />
-                <Input placeholder="Subject" type="text" />
-                <Textarea placeholder="Your Message" />
-                <Button type="submit">Send</Button>
+                <Input placeholder="Sujet" type="text" />
+                <Textarea placeholder="Ton Message" />
+                <Button type="submit">Soumettre</Button>
               </form>
             </div>
           </div>
