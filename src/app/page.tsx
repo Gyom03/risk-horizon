@@ -104,10 +104,10 @@ export default function Component() {
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col items-center justify-center">
                 <img
-                  alt="John Doe"
+                  alt=""
                   className="rounded-full"
                   height={150}
-                  src="/placeholder.svg"
+                  src="imgs/profils/rosin.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
@@ -116,7 +116,7 @@ export default function Component() {
                 />
                 <div className="mt-2 text-center">
                   <h3 className="font-semibold text-gray-50">Rosin Guillaume</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Président de l'ASBL</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Président</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -124,7 +124,7 @@ export default function Component() {
                   alt="Jane Smith"
                   className="rounded-full"
                   height={150}
-                  src="/placeholder.svg"
+                  src="imgs/profils/richard.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
@@ -133,7 +133,7 @@ export default function Component() {
                 />
                 <div className="mt-2 text-center">
                   <h3 className="font-semibold text-gray-50">Richard Guillaume</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président de l'ASBL</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -141,7 +141,7 @@ export default function Component() {
                   alt="Bob Johnson"
                   className="rounded-full"
                   height={150}
-                  src="/placeholder.svg"
+                  src="imgs/profils/alicia.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
@@ -158,7 +158,7 @@ export default function Component() {
                   alt="Sarah Lee"
                   className="rounded-full"
                   height={150}
-                  src="/placeholder.svg"
+                  src="imgs/profils/julien.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
