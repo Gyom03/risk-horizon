@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   icons: ["logo_mono.png"],
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "fr_BE",
     url: "https://risk-horizon.be",
     images: [
       {
@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={inter.className}>
         <Navbar />
         {children}
