@@ -39,6 +39,20 @@ export const metadata: Metadata = {
   creator: "Risk Horizon",
   publisher: "Risk Horizon",
   icons: ["logo_mono.png"],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://risk-horizon.be",
+    images: [
+      {
+        url: "https://risk-horizon.be/logo_mono.png",
+        width: 800,
+        height: 600,
+        alt: "Risk Horizon logo",
+      },
+    ],
+  },
+  metadataBase: new URL("https://risk-horizon.be"),
 }
 
 export default function RootLayout({
