@@ -9,17 +9,17 @@ function Page() {
           <div className="space-y-2 text-gray-50">
             <h1 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">A propos de Risk Horizon</h1>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Chez Risk Horizon, nous sommes là pour veiller sur vous, vos proches et votre entreprise en assurant la protection 
+              {`Chez Risk Horizon, nous sommes là pour veiller sur vous, vos proches et votre entreprise en assurant la protection 
               de vos structures et de vos comptes, qu'ils soient personnels ou professionnels. Notre engagement absolu est de vous 
-              offrir une tranquillité d'esprit totale en matière de sécurité.
+              offrir une tranquillité d'esprit totale en matière de sécurité.`}
             </p>
           </div>
           <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
             <div className="space-y-2">
               <h3 className="font-bold tracking-tight text-gray-50">Notre Mission</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-              Nous avons pour mission de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau d'expertise technique. 
-              Nous croyons fermement que la cybersécurité devrait être accessible et compréhensible pour tous.
+                {`Nous avons pour mission de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau d'expertise technique. 
+              Nous croyons fermement que la cybersécurité devrait être accessible et compréhensible pour tous.`}
               </p>
             </div>
             <div className="space-y-2">
@@ -33,9 +33,9 @@ function Page() {
             <div className="space-y-2">
               <h3 className="font-bold tracking-tight text-gray-50">Notre approche</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-              Chez Risk Horizon, nous adoptons une approche globale pour protéger nos clients. Nos services incluent la formation en cybersécurité, les consultations en sécurité, 
+                {`Chez Risk Horizon, nous adoptons une approche globale pour protéger nos clients. Nos services incluent la formation en cybersécurité, les consultations en sécurité, 
               l'analyse des menaces et les solutions de protection des données. 
-              Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques et élaborer des stratégies personnalisées afin de les protéger.
+              Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques et élaborer des stratégies personnalisées afin de les protéger.`}
               </p>
             </div>
           </div>
