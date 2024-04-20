@@ -21,7 +21,24 @@ const libre_franklin = Libre_Franklin({
 
 export const metadata: Metadata = {
   title: "Risk Horizon",
-  description: "Risk Horizon asbl",
+  description: "Risk Horizon ASBL",
+  authors: [{ name: "Risk Horizon" }, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
+  keywords: [
+    "Cybersécurité",
+    "Risk Horizon",
+    "ASBL",
+    "Security",
+    "Data protection",
+    "Protection en ligne",
+    "Guillaume Richard",
+    "Guillaume Rosin",
+    "Guillaume",
+    "Richard",
+    "Rosin",
+  ],
+  creator: "Risk Horizon",
+  publisher: "Risk Horizon",
+  icons: ["logo_mono.png"],
 }
 
 export default function RootLayout({
