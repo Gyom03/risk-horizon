@@ -21,7 +21,8 @@ const libre_franklin = Libre_Franklin({
 
 export const metadata: Metadata = {
   title: "Risk Horizon",
-  description: "Risk Horizon ASBL",
+  description:
+    "Risk Horizon ASBL est une association à but non lucratif qui vise à promouvoir la cybersécurité et la protection des données en ligne.",
   authors: [{ name: "Risk Horizon" }, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
   keywords: [
     "Cybersécurité",
