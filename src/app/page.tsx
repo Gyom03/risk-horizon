@@ -26,18 +26,19 @@ export default function Component() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white">
-                  Joignons nos forces pour garantir votre sécurité en ligne.
+                    Joignons nos forces pour garantir votre sécurité en ligne.
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de connaissance technologique.
+                    Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de
+                    connaissance technologique.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
                     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="#"
+                    href="/"
                   >
-                    Plus d'infos
+                    {"Plus d'infos"}
                   </Link>
                 </div>
               </div>
@@ -49,32 +50,33 @@ export default function Component() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nous faisons</h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Nous proposons une gamme de services pour aider les individus et les organisations à rester en sécurité dans le monde numérique.
+                Nous proposons une gamme de services pour aider les individus et les organisations à rester en sécurité
+                dans le monde numérique.
               </p>
             </div>
             <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Formation en Cybersécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
+                  Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
                 </p>
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Consultation en Sécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                Laissez nos experts évaluer et améliorer votre posture de sécurité.
+                  Laissez nos experts évaluer et améliorer votre posture de sécurité.
                 </p>
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
+                  Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
                 </p>
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Protection des Données</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                Apprenez à protéger vos données des regards indiscrets.
+                  Apprenez à protéger vos données des regards indiscrets.
                 </p>
               </div>
             </div>
@@ -98,7 +100,7 @@ export default function Component() {
             <div className="space-y-2 text-gray-50">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Qui sommes nous ?</h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique.
+                {"Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique."}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -178,7 +180,7 @@ export default function Component() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contactez nous</h2>
               <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services.
+                {"N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services."}
               </p>
             </div>
             <div className="mx-auto w-full max-w-[400px] space-y-4">
