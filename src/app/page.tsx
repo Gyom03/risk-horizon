@@ -8,44 +8,13 @@ import { Meteors } from "@/components/ui/meteor"
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import { LayoutGrid } from "@/components/ui/layout-grid"
 export default function Component() {
-  const cards = [
-    {
-      id: 1,
-      content: <SkeletonOne />,
-      className: "md:col-span-2",
-      thumbnail:
-        "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: 2,
-      content: <SkeletonTwo />,
-      className: "col-span-1",
-      thumbnail:
-        "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: 3,
-      content: <SkeletonThree />,
-      className: "col-span-1",
-      thumbnail:
-        "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: 4,
-      content: <SkeletonFour />,
-      className: "md:col-span-2",
-      thumbnail:
-        "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ]
-
   return (
     <div className="flex flex-col min-h-[100dvh] bg-[#111827]">
       <main className="flex-1">
         <section
           className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48"
           style={{
-            backgroundImage: "url('/bg.jpg')",
+            backgroundImage: "url('/bg-min.jpg')",
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundBlendMode: "multiply",
@@ -225,17 +194,6 @@ export default function Component() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Acme Inc. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-white" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-white" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
     </div>
   )
 }
