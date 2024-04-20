@@ -24,8 +24,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: pwd
-    - run: rm -r node_modules/
     - run: npm i
     - run: npm run build --if-present
     - run: pm2 restart npm
