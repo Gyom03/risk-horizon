@@ -9,83 +9,143 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import { LayoutGrid } from "@/components/ui/layout-grid"
 export default function Component() {
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-[#111827]">
-      <main className="flex-1">
-        <section
-          className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48"
-          style={{
-            backgroundImage: "url('/bg-min.jpg')",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundBlendMode: "multiply",
-            backgroundColor: "rgba(0, 0, 100, 0.4)",
-          }}
-        >
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_700px]">
-              <div className="flex flex-col justify-center space-y-4">
+    <div className="w-[100vw]">
+      <div className="flex flex-col min-h-[100dvh] bg-[#111827]">
+        <main className="flex-1">
+          <section
+            className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48"
+            style={{
+              backgroundImage: "url('/bg-min.jpg')",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundBlendMode: "multiply",
+              backgroundColor: "rgba(0, 0, 100, 0.4)",
+            }}
+          >
+            <div className="container px-4 md:px-6">
+              <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_700px]">
+                <div className="flex flex-col justify-center space-y-4">
+                  <div className="space-y-2">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white">
+                      Joignons nos forces pour garantir votre sécurité en ligne.
+                    </h1>
+                    <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                      Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de
+                      connaissance technologique.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                    <Link
+                      className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                      href="/"
+                    >
+                      {"Plus d'infos"}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="w-full py-12 pb-5 md:py-24 md:pb-14 lg:py-32 lg:pb-20 bg-gray-100 dark:bg-gray-800">
+            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nous faisons</h2>
+                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Nous proposons une gamme de services pour aider les individus et les organisations à rester en
+                  sécurité dans le monde numérique.
+                </p>
+              </div>
+              <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white">
-                    Joignons nos forces pour garantir votre sécurité en ligne.
-                  </h1>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de
-                    connaissance technologique.
+                  <h3 className="font-bold tracking-tight">Formation en Cybersécurité</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="/"
-                  >
-                    {"Plus d'infos"}
-                  </Link>
+                <div className="space-y-2">
+                  <h3 className="font-bold tracking-tight">Consultation en Sécurité</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Laissez nos experts évaluer et améliorer votre posture de sécurité.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-bold tracking-tight">Protection des Données</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Apprenez à protéger vos données des regards indiscrets.
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nous faisons</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Nous proposons une gamme de services pour aider les individus et les organisations à rester en sécurité
-                dans le monde numérique.
-              </p>
+            {/* <div className="mt-20  mb-5 mx-auto max-w-[90%]">
+            <div className="flex gap-4 justify-center flex-col xs:flex-row mx-5">
+              <Image
+                src={"/imgs/12.jpg"}
+                alt=""
+                width={300}
+                height={300}
+                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto  sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
+              />
+              <Image
+                src={"/imgs/8.jpg"}
+                alt=""
+                width={300}
+                height={300}
+                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto   sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
+              />
+              <Image
+                src={"/imgs/14.webp"}
+                alt=""
+                width={300}
+                height={300}
+                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto   sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
+              />
             </div>
-            <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
-              <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Formation en Cybersécurité</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Consultation en Sécurité</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Laissez nos experts évaluer et améliorer votre posture de sécurité.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Protection des Données</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Apprenez à protéger vos données des regards indiscrets.
-                </p>
+          </div> */}
+            <div className="w-full mt-6 md:mt-14 mb-4">
+              <div className="mx-10 sm:mx-14 md:mx-30 xl:mx-64 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <Image
+                  alt="Image 1"
+                  className="w-full object-cover rounded-lg h-[200px] md:h-[250px]"
+                  height={400}
+                  src="/imgs/12.jpg"
+                  style={{
+                    aspectRatio: "600/400",
+                    objectFit: "cover",
+                  }}
+                  width={600}
+                />
+                <Image
+                  alt="Image 2"
+                  className="w-full object-cover rounded-lg h-[200px] md:h-[250px]"
+                  height={400}
+                  src="/imgs/8.jpg"
+                  style={{
+                    aspectRatio: "600/400",
+                    objectFit: "cover",
+                  }}
+                  width={600}
+                />
+                <Image
+                  alt="Image 3"
+                  className="w-full  object-cover rounded-lg h-[200px] md:h-[250px]"
+                  height={400}
+                  src="/imgs/14.webp"
+                  style={{
+                    aspectRatio: "600/400",
+                    objectFit: "cover",
+                  }}
+                  width={600}
+                />
               </div>
             </div>
-          </div>
-          <div className="h-[500px] py-20 w-full">
-            <LayoutGrid cards={cards} />
-          </div>
-        </section>
-        {/* <section className="w-full py-12 md:py-24 lg:py-32">
+          </section>
+          {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2 text-gray-50">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Impact</h2>
@@ -98,108 +158,109 @@ export default function Component() {
             <LayoutGrid cards={cards} />
           </div>
         </section> */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-2 text-gray-50">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Qui sommes nous ?</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                {"Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique."}
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col items-center justify-center">
-                <img
-                  alt=""
-                  className="rounded-full"
-                  height={150}
-                  src="imgs/profils/rosin.jpg"
-                  style={{
-                    aspectRatio: "150/150",
-                    objectFit: "cover",
-                  }}
-                  width={150}
-                />
-                <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Guillaume Rosin</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Président et</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">analyste en cybersécurité</p>
+          <section className="w-full py-12 md:py-24 lg:py-32">
+            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+              <div className="space-y-2 text-gray-50">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Qui sommes nous ?</h2>
+                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  {"Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique."}
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    alt=""
+                    className="rounded-full"
+                    height={150}
+                    src="imgs/profils/rosin.jpg"
+                    style={{
+                      aspectRatio: "150/150",
+                      objectFit: "cover",
+                    }}
+                    width={150}
+                  />
+                  <div className="mt-2 text-center">
+                    <h3 className="font-semibold text-gray-50">Guillaume Rosin</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Président et</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">analyste en cybersécurité</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    alt="Jane Smith"
+                    className="rounded-full"
+                    height={150}
+                    src="imgs/profils/richard.jpg"
+                    style={{
+                      aspectRatio: "150/150",
+                      objectFit: "cover",
+                    }}
+                    width={150}
+                  />
+                  <div className="mt-2 text-center">
+                    <h3 className="font-semibold text-gray-50">Guillaume Richard</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président et</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">analyse en cybersécurité </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    alt="Bob Johnson"
+                    className="rounded-full"
+                    height={150}
+                    src="imgs/profils/alicia.jpg"
+                    style={{
+                      aspectRatio: "150/150",
+                      objectFit: "cover",
+                    }}
+                    width={150}
+                  />
+                  <div className="mt-2 text-center">
+                    <h3 className="font-semibold text-gray-50">Alicia Bijnen</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Secrétaire</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    alt="Sarah Lee"
+                    className="rounded-full"
+                    height={150}
+                    src="imgs/profils/julien.jpg"
+                    style={{
+                      aspectRatio: "150/150",
+                      objectFit: "cover",
+                    }}
+                    width={150}
+                  />
+                  <div className="mt-2 text-center">
+                    <h3 className="font-semibold text-gray-50">Julien Legros</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Community Manager</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <img
-                  alt="Jane Smith"
-                  className="rounded-full"
-                  height={150}
-                  src="imgs/profils/richard.jpg"
-                  style={{
-                    aspectRatio: "150/150",
-                    objectFit: "cover",
-                  }}
-                  width={150}
-                />
-                <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Guillaume Richard</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président et</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">analyse en cybersécurité </p>
-                </div>
+            </div>
+          </section>
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+            <div className="container grid items-center gap-6 px-4 text-center md:px-6">
+              <div className="space-y-3">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contactez nous</h2>
+                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  {"N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services."}
+                </p>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <img
-                  alt="Bob Johnson"
-                  className="rounded-full"
-                  height={150}
-                  src="imgs/profils/alicia.jpg"
-                  style={{
-                    aspectRatio: "150/150",
-                    objectFit: "cover",
-                  }}
-                  width={150}
-                />
-                <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Alicia Bijnen</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Secrétaire</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <img
-                  alt="Sarah Lee"
-                  className="rounded-full"
-                  height={150}
-                  src="imgs/profils/julien.jpg"
-                  style={{
-                    aspectRatio: "150/150",
-                    objectFit: "cover",
-                  }}
-                  width={150}
-                />
-                <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Julien Legros</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Community Manager</p>
-                </div>
+              <div className="mx-auto w-full max-w-[400px] space-y-4">
+                <form className="grid gap-4">
+                  <Input placeholder="Nom" type="text" />
+                  <Input placeholder="Email" type="email" />
+                  <Input placeholder="Sujet" type="text" />
+                  <Textarea placeholder="Ton Message" />
+                  <Button type="submit">Soumettre</Button>
+                </form>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container grid items-center gap-6 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contactez nous</h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                {"N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services."}
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-[400px] space-y-4">
-              <form className="grid gap-4">
-                <Input placeholder="Nom" type="text" />
-                <Input placeholder="Email" type="email" />
-                <Input placeholder="Sujet" type="text" />
-                <Textarea placeholder="Ton Message" />
-                <Button type="submit">Soumettre</Button>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
   )
 }
