@@ -26,7 +26,7 @@ export const viewport: Viewport = {
   initialScale: 1.0,
 }
 export const metadata: Metadata = {
-  title: "Risk Horizon",
+  title: "Risk Horizon ASBL - Cybersécurité",
   description:
     "Risk Horizon ASBL est une association à but non lucratif qui vise à promouvoir la cybersécurité et la protection des données en ligne.",
   authors: [{ name: "Risk Horizon" }, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
@@ -69,6 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
       <body className={inter.className}>
         <Navbar />
         {children}
