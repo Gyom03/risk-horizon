@@ -45,14 +45,14 @@ export const metadata: Metadata = {
   ],
   creator: "Risk Horizon",
   publisher: "Risk Horizon",
-  icons: ["logo_mono.png"],
+  icons: ["favicon.ico"],
   openGraph: {
     type: "website",
     locale: "fr_BE",
     url: "https://risk-horizon.be",
     images: [
       {
-        url: "https://risk-horizon.be/logo_mono.png",
+        url: "https://risk-horizon.be/favicon.ico",
         width: 800,
         height: 600,
         alt: "Risk Horizon logo",
