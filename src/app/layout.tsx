@@ -7,6 +7,8 @@ import Link from "next/link"
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import type { Viewport } from "next"
+
 const inter = Inter({ subsets: ["latin"] })
 /* const rethink_sans = Rethink_Sans({
   subsets: ["latin"],
@@ -19,6 +21,10 @@ const libre_franklin = Libre_Franklin({
   variable: "--font-libre_franklin",
 }) */
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+}
 export const metadata: Metadata = {
   title: "Risk Horizon",
   description:
