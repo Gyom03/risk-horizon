@@ -172,7 +172,7 @@ export default function Component() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    alt=""
+                    alt="Guillaume Rosin"
                     className="rounded-full"
                     height={150}
                     src="imgs/profils/rosin.jpg"
@@ -180,6 +180,7 @@ export default function Component() {
                       aspectRatio: "150/150",
                       objectFit: "cover",
                     }}
+                    title="Guillaume Rosin"
                     width={150}
                   />
                   <div className="mt-2 text-center">
@@ -190,7 +191,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    alt="Jane Smith"
+                    alt="Guillaume Richard"
                     className="rounded-full"
                     height={150}
                     src="imgs/profils/richard.jpg"
@@ -198,6 +199,7 @@ export default function Component() {
                       aspectRatio: "150/150",
                       objectFit: "cover",
                     }}
+                    title="Guillaume Richard"
                     width={150}
                   />
                   <div className="mt-2 text-center">
@@ -208,7 +210,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    alt="Bob Johnson"
+                    alt="alicia bijnen"
                     className="rounded-full"
                     height={150}
                     src="imgs/profils/alicia.jpg"
@@ -216,6 +218,7 @@ export default function Component() {
                       aspectRatio: "150/150",
                       objectFit: "cover",
                     }}
+                    title="Alicia Bijnen"
                     width={150}
                   />
                   <div className="mt-2 text-center">
@@ -225,7 +228,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    alt="Sarah Lee"
+                    alt="julien legros"
                     className="rounded-full"
                     height={150}
                     src="imgs/profils/julien.jpg"
@@ -233,6 +236,7 @@ export default function Component() {
                       aspectRatio: "150/150",
                       objectFit: "cover",
                     }}
+                    title="Julien Legros"
                     width={150}
                   />
                   <div className="mt-2 text-center">
