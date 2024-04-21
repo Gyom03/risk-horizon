@@ -113,6 +113,7 @@ export default function Component() {
             <div className="w-full mt-6 md:mt-14 mb-4">
               <div className="mx-10 sm:mx-14 md:mx-30 xl:mx-64 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <Image
+                  loading="lazy"
                   alt="Image 1"
                   className="w-full object-cover rounded-lg h-[200px] md:h-[250px]"
                   height={400}
@@ -124,6 +125,7 @@ export default function Component() {
                   width={600}
                 />
                 <Image
+                  loading="lazy"
                   alt="Image 2"
                   className="w-full object-cover rounded-lg h-[200px] md:h-[250px]"
                   height={400}
@@ -135,6 +137,7 @@ export default function Component() {
                   width={600}
                 />
                 <Image
+                  loading="lazy"
                   alt="Image 3"
                   className="w-full  object-cover rounded-lg h-[200px] md:h-[250px]"
                   height={400}
@@ -172,6 +175,7 @@ export default function Component() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center justify-center">
                   <img
+                    loading="lazy"
                     alt="Guillaume Rosin"
                     className="rounded-full"
                     height={150}
@@ -191,6 +195,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
+                    loading="lazy"
                     alt="Guillaume Richard"
                     className="rounded-full"
                     height={150}
@@ -210,6 +215,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
+                    loading="lazy"
                     alt="alicia bijnen"
                     className="rounded-full"
                     height={150}
@@ -228,6 +234,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <img
+                    loading="lazy"
                     alt="julien legros"
                     className="rounded-full"
                     height={150}
