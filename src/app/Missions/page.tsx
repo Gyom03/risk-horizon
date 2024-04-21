@@ -13,14 +13,12 @@ function Page() {
     <div className="pt-8 flex flex-col min-h-[100dvh] bg-[#111827] items-center">
       <div className="text-white max-w-5xl blog-section">
         <div className="p-8 mt-12 w-full">
-          <div className="mb-4">
-            <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">
-              Lundi 25 mars 2024
-            </h2>
+          <div className="mb-8">
+            <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">Lundi 25 mars 2024</h2>
             <p>Haute école en Hainaut - Mons</p>
           </div>
 
-          <p className="mb-8">
+          <p className="mb-10">
             {
               " Dans le cadre d'une récente collaboration, notre ASBL s'est associée à la Haute Ecole en Hainaut pour améliorer la cybersécurité. Nous avons organisé une formation pour les élèves de première année en informatique, visant à les sensibiliser aux risques informatiques et à leur fournir des conseils pour se protéger, ainsi que leurs proches. De la création de mots de passe robustes à la sensibilisation aux outils de hacking, nos experts ont abordé une variété de sujets cruciaux. L'enthousiasme et l'engagement démontrés par les étudiants reflètent l'importance croissante accordée à la protection des données numériques. Cette collaboration illustre notre détermination à instaurer un changement culturel et à renforcer la résilience numérique de notre société, un pas de plus vers un environnement en ligne plus sûr pour tous."
             }
@@ -76,7 +74,7 @@ function Page() {
           />
         </div>
         <div className="p-8 mt-12 w-full">
-          <div className="mb-4">
+          <div className="mb-8">
             <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">
               Vendredi 22 mars 2024
             </h2>
@@ -129,14 +127,14 @@ function Page() {
           />
         </div>
         <div className="p-8 mt-12 w-full">
-          <div className="mb-4">
+          <div className="mb-10">
             <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">
               Vendredi 20 Avril 2024
             </h2>
             <p>ASBL HOPE HOPE - Mons</p>
           </div>
 
-          <p className="mb-8">
+          <p className="mb-10">
             {
               "En collaboration avec l'ASBL HOPE de Romain Lienard, nous avons lancé une initiative innovante visant à sensibiliser les jeunes aux risques informatiques à travers des jeux de parcours et des activités ludiques. Notre objectif est d'accompagner les jeunes dans l'acquisition de compétences en cybersécurité dès leur plus jeune âge, afin de les préparer à se protéger contre les cyberattaques à l'avenir. Ensemble, protégeons nos jeunes en leur fournissant les outils et les connaissances nécessaires pour naviguer en toute sécurité dans le monde numérique en constante évolution."
             }
