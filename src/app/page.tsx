@@ -203,7 +203,7 @@ export default function Component() {
                   <div className="mt-2 text-center">
                     <h3 className="font-semibold text-gray-50">Guillaume Richard</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président et</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">analyse en cybersécurité </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">analyste en cybersécurité </p>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-center">
