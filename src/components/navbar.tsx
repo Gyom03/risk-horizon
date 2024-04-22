@@ -23,7 +23,7 @@ function Navbar() {
           className="text-sm font-medium hover:underline underline-offset-4 text-white cursor-pointer"
           href="/A-propos"
         >
-          About
+          A propos
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4 text-white cursor-pointer"
