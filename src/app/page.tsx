@@ -15,7 +15,7 @@ export default function Component() {
           <section
             className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48"
             style={{
-              backgroundImage: "url('/bg-min.jpg')",
+              backgroundImage: "url('/bg-min.webp')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundBlendMode: "multiply",
@@ -219,7 +219,7 @@ export default function Component() {
                     alt="alicia bijnen"
                     className="rounded-full"
                     height={150}
-                    src="imgs/profils/alicia.jpg"
+                    src="imgs/profils/alicia.webp"
                     style={{
                       aspectRatio: "150/150",
                       objectFit: "cover",
