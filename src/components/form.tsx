@@ -9,12 +9,20 @@ import { useMutation } from '@tanstack/react-query'
 import { CircleCheck, Loader2 } from "lucide-react"
 import { toast } from 'sonner'
 import axios from 'axios'
+import { set, z } from 'zod'
 
 function Form() {
     const [nameValue, setNameValue] = React.useState("")
     const [emailValue, setEmailValue] = React.useState("")
     const [subjectValue, setSubjectValue] = React.useState("")
     const [messageValue, setMessageValue] = React.useState("")
+
+
+    const [nameValid, setNameValueValid] = React.useState(true)
+    const [emailValid, setEmailValueValid] = React.useState(true)
+    const [subjectValid, setSubjectValueValid] = React.useState(true)
+    const [messageValid, setMessageValueValid] = React.useState(true)
+
 
     const { executeRecaptcha } = useGoogleReCaptcha()
 
@@ -85,10 +93,38 @@ function Form() {
                         <div className="mx-auto w-full max-w-[400px] space-y-4">
                             <form className="grid gap-4 " onSubmit={handleSubmitForm}>
                                 <p className="w-full text-start font-bold">{"Formulaire :"}</p>
-                                <Input placeholder="Nom" type="text" onChange={(e) => setNameValue(e.target.value)} value={nameValue} />
-                                <Input placeholder="Email" type="email" onChange={(e) => setEmailValue(e.target.value)} value={emailValue} />
-                                <Input placeholder="Sujet" type="text" onChange={(e) => setSubjectValue(e.target.value)} value={subjectValue} />
-                                <Textarea placeholder="Votre message" onChange={(e) => setMessageValue(e.target.value)} value={messageValue} className='h-40' />
+                                <Input placeholder="Nom" type="text" onChange={(e) => setNameValue(e.target.value)} value={nameValue} invalid={!nameValid}
+                                    onBlur={() => {
+                                        if (z.string().min(2).safeParse(nameValue).success) {
+                                            setNameValueValid(true)
+                                        } else {
+                                            setNameValueValid(false)
+                                        }
+                                    }} />
+                                <Input placeholder="Email" type="email" onChange={(e) => setEmailValue(e.target.value)} value={emailValue} invalid={!emailValid}
+                                    onBlur={() => {
+                                        if (z.string().email().safeParse(emailValue).success) {
+                                            setEmailValueValid(true)
+                                        } else {
+                                            setEmailValueValid(false)
+                                        }
+                                    }} />
+                                <Input placeholder="Sujet" type="text" onChange={(e) => setSubjectValue(e.target.value)} value={subjectValue} invalid={!subjectValid}
+                                    onBlur={() => {
+                                        if (z.string().min(2).safeParse(subjectValue).success) {
+                                            setSubjectValueValid(true)
+                                        } else {
+                                            setSubjectValueValid(false)
+                                        }
+                                    }} />
+                                <Textarea placeholder="Votre message" onChange={(e) => setMessageValue(e.target.value)} value={messageValue} className={messageValid ? " h-40" : "h-40 border-red-500 "} required
+                                    onBlur={() => {
+                                        if (z.string().min(5).safeParse(messageValue).success) {
+                                            setMessageValueValid(true)
+                                        } else {
+                                            setMessageValueValid(false)
+                                        }
+                                    }} />
 
                                 {isPending ? <Button disabled>
                                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
