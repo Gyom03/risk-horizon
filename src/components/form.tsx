@@ -7,7 +7,8 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import GoogleCaptchaWrapper from './google-captcha-wrapper'
 import { useMutation } from '@tanstack/react-query'
 import { CircleCheck, Loader2 } from "lucide-react"
-
+import { toast } from 'sonner'
+import axios from 'axios'
 
 function Form() {
     const [nameValue, setNameValue] = React.useState("")
@@ -30,28 +31,34 @@ function Form() {
     }
 
 
-    const { data, mutate, isPending, isSuccess } = useMutation({
+    let isSuccess = false
+
+    const { data, mutate, isPending, isError, error, status } = useMutation({
         mutationKey: ['submit'],
-        mutationFn: (token: string) => {
-            return fetch('/api/sumbit', {
-                method: 'POST',
+        mutationFn: async (token: string) => {
+
+            const { data } = await axios.post('/api/submit', {
+                name: nameValue,
+                email: emailValue,
+                subject: subjectValue,
+                message: messageValue,
+                gRecaptchaToken: token
+            }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    name: nameValue,
-                    email: emailValue,
-                    subject: subjectValue,
-                    message: messageValue,
-                    gRecaptchaToken: token
-                }),
             })
+            return data
 
         },
         onSuccess: () => {
-            console.log('success')
+            isSuccess = true
         },
+        onError: () => {
+            toast.error('Une erreur est survenue lors de l\'envoi du message')
+        }
     })
+
 
     return (
 

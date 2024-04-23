@@ -17,6 +17,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Querywrapper from "@/components/query-provider"
+import { Toaster, toast } from 'sonner'
 
 const queryClient = new QueryClient()
 
@@ -82,6 +83,7 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
       <body className={inter.className}>
+        <Toaster richColors />
         <Querywrapper>
           <GoogleCaptchaWrapper>
             <Navbar />
