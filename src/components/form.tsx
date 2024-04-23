@@ -10,8 +10,11 @@ import { CircleCheck, Loader2 } from "lucide-react"
 import { toast } from 'sonner'
 import axios from 'axios'
 import { set, z } from 'zod'
-
-function Form() {
+interface FormProps {
+    extended?: boolean
+    className?: string
+}
+function Form({ extended, className }: FormProps) {
     const [nameValue, setNameValue] = React.useState("")
     const [emailValue, setEmailValue] = React.useState("")
     const [subjectValue, setSubjectValue] = React.useState("")
@@ -67,10 +70,10 @@ function Form() {
         }
     })
 
-
+    console.log(extended)
     return (
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <section className={className}>
             <div className="container grid items-center gap-6 px-4 text-center md:px-6">
                 {isSuccess ? <div className='flex justify-center items-center flex-col h-96'>
                     <CircleCheck color='green' className='w-14 h-14 mb-6' />
@@ -88,7 +91,8 @@ function Form() {
                             <h3 className="!mt-10 !mb-10 text-xl font-bold tracking-tighter md:text-2xl/tight text-[#5f3494] hover:underline">
                                 <a href="mailto:info.risk.horizon@gmail.com">info.risk.horizon@gmail.com</a>
                             </h3>
-                            <h3 className="text-3xl font-bold tracking-tighter md:text-4xl/tight ">ou</h3>
+                            <h3 className="text-3xl font-bold tracking-tighter md:text-4xl/tight !mb-10 ">ou</h3>
+                            {extended && <><h4 className="text-xl font-semibold tracking-tighter md:text-2xl/tight !mb-10">Tel : +32 494876620</h4><h3 className="text-3xl font-bold tracking-tighter md:text-4xl/tight ">ou</h3></>}
                         </div>
                         <div className="mx-auto w-full max-w-[400px] space-y-4">
                             <form className="grid gap-4 " onSubmit={handleSubmitForm}>

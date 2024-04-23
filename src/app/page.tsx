@@ -255,7 +255,7 @@ export default function Component() {
               </div>
             </div>
           </section>
-          <Form />
+          <Form className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800" />
         </main>
       </div>
     </div>
