@@ -42,9 +42,8 @@ function Form({ extended, className }: FormProps) {
     }
 
 
-    let isSuccess = false
 
-    const { data, mutate, isPending, isError, error, status } = useMutation({
+    const { data, mutate, isPending, isSuccess, isError, error, status } = useMutation({
         mutationKey: ['submit'],
         mutationFn: async (token: string) => {
 
@@ -63,7 +62,7 @@ function Form({ extended, className }: FormProps) {
 
         },
         onSuccess: () => {
-            isSuccess = true
+
         },
         onError: () => {
             toast.error('Une erreur est survenue lors de l\'envoi du message')
