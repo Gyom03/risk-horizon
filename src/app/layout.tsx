@@ -8,6 +8,17 @@ import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import type { Viewport } from "next"
+import GoogleCaptchaWrapper from "@/components/google-captcha-wrapper"
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import Querywrapper from "@/components/query-provider"
+
+const queryClient = new QueryClient()
 
 const inter = Inter({ subsets: ["latin"] })
 /* const rethink_sans = Rethink_Sans({
@@ -71,9 +82,13 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <Querywrapper>
+          <GoogleCaptchaWrapper>
+            <Navbar />
+            {children}
+            <Footer />
+          </GoogleCaptchaWrapper>
+        </Querywrapper>
       </body>
     </html>
   )

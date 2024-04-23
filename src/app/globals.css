@@ -97,3 +97,7 @@ h6 {
   background-color: white !important;
   color: black !important;
 }
+
+.grecaptcha-badge { 
+  visibility: hidden !important;
+}
