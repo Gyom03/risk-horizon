@@ -41,7 +41,28 @@ function Page() {
           </div>
         </div>
         <div className="h-screen py-20 w-full">
-          <LayoutGrid cards={cards} />
+          <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+            <div className="md:col-span-2"><div className="md:col-span-2 relative overflow-hidden bg-white rounded-xl h-full w-full" >
+              <img alt="thumbnail" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="object-cover object-top absolute inset-0 h-full w-full transition duration-200 blur-none" src="/imgs/9.jpg" />
+            </div>
+            </div>
+            <div className="col-span-1">
+              <div className="col-span-1 relative overflow-hidden bg-white rounded-xl h-full w-full" >
+                <img alt="thumbnail" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="object-cover object-top absolute inset-0 h-full w-full transition duration-200 blur-none" src="/imgs/1.jpg" />
+              </div>
+            </div>
+            <div className="col-span-1">
+              <div className="col-span-1 relative overflow-hidden bg-white rounded-xl h-full w-full" >
+                <img alt="thumbnail" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="object-cover object-top absolute inset-0 h-full w-full transition duration-200 blur-none" src="/imgs/10.jpg" />
+              </div>
+            </div>
+            <div className="md:col-span-2"><div className="md:col-span-2 relative overflow-hidden z-40 bg-white rounded-xl h-full w-full" >
+              <img alt="thumbnail" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="object-cover object-top absolute inset-0 h-full w-full transition duration-200 blur-none" src="/imgs/11.jpg" />
+            </div>
+            </div>
+            <div className="absolute h-full w-full left-0 top-0 bg-black opacity-0 z-10 pointer-events-none" >
+            </div>
+          </div>
         </div>
       </section>
     </main>
