@@ -3,7 +3,7 @@ import React from "react"
 
 function Page() {
   return (
-    <main className="min-h-[calc(100dvh-7rem)] bg-[#061322]">
+    <main className="min-h-[calc(100dvh-7rem)] bg-riskbg">
       <section className="w-full py-12 md:py-24 lg:py-32   ">
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-2 text-gray-50">

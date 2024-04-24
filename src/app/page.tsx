@@ -11,7 +11,7 @@ import Form from "@/components/form"
 export default function Component() {
   return (
     <div className="w-[100vw]">
-      <div className="flex flex-col min-h-[100dvh] bg-[#111827]">
+      <div className="flex flex-col min-h-[100dvh] bg-riskbg">
         <main className="flex-1">
           <section
             className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48"
@@ -239,7 +239,7 @@ export default function Component() {
                     alt="julien legros"
                     className="rounded-full"
                     height={150}
-                    src="imgs/profils/julien.jpg"
+                    src="imgs/anonyme.jpg"
                     style={{
                       aspectRatio: "150/150",
                       objectFit: "cover",
