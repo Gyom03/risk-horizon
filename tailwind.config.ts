@@ -22,7 +22,7 @@ const config = {
     },
     extend: {
       colors: {
-        riskbg: "#040432",
+        riskbg: "#040437",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
