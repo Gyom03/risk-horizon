@@ -4,7 +4,7 @@ import Link from "next/link"
 
 function Navbar() {
   return (
-    <header className="px-4 lg:px-6 md:h-16 flex items-center bg-[#111827] flex-col md:flex-row">
+    <header className="px-4 lg:px-6 md:h-16 flex items-center bg-riskbg flex-col md:flex-row">
       <Link className="mt-3 md:mt-0 flex items-center justify-center " href="/">
         <Image alt="Risk Horizon logo" height="250" src="/logo_line_white.png" width="300" />
         <span className="sr-only">Risk Horizon asbl</span>
