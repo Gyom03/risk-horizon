@@ -14,13 +14,13 @@ function Page() {
       <div className="text-white max-w-5xl blog-section">
         <div className="p-8 mt-12 w-full">
           <div className="mb-8">
-            <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">Lundi 25 mars 2024</h2>
-            <p>Haute école en Hainaut - Mons</p>
+            <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">Lundi 22 avril 2024</h2>
+            <p>Risk Horizon</p>
           </div>
 
           <p className="mb-10">
             {
-              " Dans le cadre d'une récente collaboration, notre ASBL s'est associée à la Haute Ecole en Hainaut pour améliorer la cybersécurité. Nous avons organisé une formation pour les élèves de première année en informatique, visant à les sensibiliser aux risques informatiques et à leur fournir des conseils pour se protéger, ainsi que leurs proches. De la création de mots de passe robustes à la sensibilisation aux outils de hacking, nos experts ont abordé une variété de sujets cruciaux. L'enthousiasme et l'engagement démontrés par les étudiants reflètent l'importance croissante accordée à la protection des données numériques. Cette collaboration illustre notre détermination à instaurer un changement culturel et à renforcer la résilience numérique de notre société, un pas de plus vers un environnement en ligne plus sûr pour tous."
+              "Nous sommes fier de vous annoncer le début de nos opérations en tant qu'ASBL. Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau d'expertise technique. Nous croyons fermement que la cybersécurité devrait être accessible et compréhensible pour tous. Notre engagement absolu est de vous offrir une tranquillité d'esprit totale en matière de sécurité."
             }
           </p>
 
@@ -73,7 +73,7 @@ function Page() {
             index={0}
           />
         </div>
-        <div className="p-8 mt-12 w-full">
+        {/* <div className="p-8 mt-12 w-full">
           <div className="mb-8">
             <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">
               Vendredi 22 mars 2024
@@ -125,8 +125,8 @@ function Page() {
             slides={[{ src: "/imgs/5.jpg" }, { src: "/imgs/6.jpg" }, { src: "/imgs/7.jpg" }]}
             index={0}
           />
-        </div>
-        <div className="p-8 mt-12 w-full">
+        </div> */}
+        {/* <div className="p-8 mt-12 w-full">
           <div className="mb-10">
             <h2 className=" text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none ">
               Vendredi 20 Avril 2024
@@ -198,7 +198,7 @@ function Page() {
             slides={[{ src: "/imgs/1.jpg" }, { src: "/imgs/2.jpg" }, { src: "/imgs/3.jpg" }]}
             index={0}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   )

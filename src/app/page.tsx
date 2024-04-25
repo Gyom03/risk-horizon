@@ -19,7 +19,7 @@ export default function Component() {
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundBlendMode: "multiply",
-            backgroundColor: "rgba(0, 0, 100, 0.4)",
+            backgroundColor: "rgba(4, 4, 55, 0.4)",
           }}
         >
           <div className="container px-4 md:px-6">
