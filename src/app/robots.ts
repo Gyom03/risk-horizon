@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/Confidentialite",
     },
     sitemap: "https://risk-horizon.be/sitemap.xml",
   }

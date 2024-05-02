@@ -9,16 +9,13 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import type { Viewport } from "next"
 import GoogleCaptchaWrapper from "@/components/google-captcha-wrapper"
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import Querywrapper from "@/components/query-provider"
-import { Toaster, toast } from 'sonner'
+import { Toaster, toast } from "sonner"
+import { CSPostHogProvider } from "@/lib/provider"
+import { Analytics } from "@vercel/analytics/react"
 
+import Script from "next/script"
 const queryClient = new QueryClient()
 
 const inter = Inter({ subsets: ["latin"] })
@@ -81,6 +78,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7L0NDNK9"></Script>
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4K7L0NDNK9');`}
+        </Script>
+      </head>
+      {/* <CSPostHogProvider> */}
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
       <body className={inter.className}>
         <Toaster richColors />
@@ -91,7 +98,9 @@ export default function RootLayout({
             <Footer />
           </GoogleCaptchaWrapper>
         </Querywrapper>
+        <Analytics />
       </body>
+      {/* </CSPostHogProvider> */}
     </html>
   )
 }
