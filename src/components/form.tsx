@@ -86,7 +86,7 @@ function Form({ extended, className }: FormProps) {
                 {"N'hésitez pas à nous contacter pour en savoir plus sur nos programmes et services."}
               </p>
               <h3 className="!mt-10 !mb-10 text-xl font-bold tracking-tighter md:text-2xl/tight text-[#5f3494] hover:underline">
-                <a href="mailto:info.risk.horizon@gmail.com">info@risk-horizon.be</a>
+                <a href="mailto:info@risk-horizon.be">info@risk-horizon.be</a>
               </h3>
               <h3 className="text-3xl font-bold tracking-tighter md:text-4xl/tight !mb-10 ">ou</h3>
               {extended && (
