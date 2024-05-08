@@ -42,7 +42,7 @@ export async function POST(request: Request, response: Response) {
     console.log("recaptcha error:", e)
   }
 
-  if (res && res.data?.success && res.data?.score > 0.4) {
+  if (res && res.data?.success && res.data?.score > 0.3) {
     // Save data to the database from here
     /* console.log("Saving data to the database:", firstName, lastName, email, hearFromSponsors) */
     console.log("res.data?.score:", res.data?.score)
