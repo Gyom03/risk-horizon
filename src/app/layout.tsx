@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     url: "https://risk-horizon.be",
     images: [
       {
-        url: "https://risk-horizon.be/favicon.ico",
+        url: "https://risk-horizon.be/opengraph-image.png",
         width: 800,
         height: 600,
         alt: "Risk Horizon logo",
