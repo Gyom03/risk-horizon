@@ -21,7 +21,14 @@ export async function POST(request: Request, response: Response) {
   if (!result.success) return new Response("Invalid data", { status: 400 })
   const { name, email, subject, message, gRecaptchaToken } = result.data
 
-  console.log("gRecaptchaToken,firstName,lastName,email,hearFromSponsors:", gRecaptchaToken?.slice(0, 10) + "...", name, email, subject, message)
+  console.log(
+    "gRecaptchaToken,firstName,lastName,email,hearFromSponsors:",
+    gRecaptchaToken?.slice(0, 10) + "...",
+    name,
+    email,
+    subject,
+    message
+  )
 
   let res: any
   const formData = `secret=${secretKey}&response=${gRecaptchaToken}`
@@ -44,12 +51,15 @@ export async function POST(request: Request, response: Response) {
       from: "form@risk-horizon.be",
       to: email,
       subject: "Votre message Risk Horizon",
-      html: "<p>" + name + ",</p><p>Merci pour votre demande. Elle a bien été enregistré et sera prise en charge d'ici très bientôt.</p>",
+      html:
+        "<p>" +
+        name +
+        ",</p><p>Merci pour votre demande. Elle a bien été enregistré et sera prise en charge d'ici très bientôt.</p>",
     })
 
     resend.emails.send({
       from: "form@risk-horizon.be",
-      to: "info.risk.horizon@gmail.com",
+      to: "info@risk-horizon.be",
       subject: "Form : New submission from " + name,
       html: "<p>From: " + name + " (" + email + ")</p><p>Subject: " + subject + "</p><p>Message: " + message + "</p>",
     })
