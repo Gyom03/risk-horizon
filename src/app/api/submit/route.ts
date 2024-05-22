@@ -45,9 +45,8 @@ export async function POST(request: Request, response: Response) {
   if (res && res.data?.success && res.data?.score > 0.3) {
     // Save data to the database from here
     /* console.log("Saving data to the database:", firstName, lastName, email, hearFromSponsors) */
-    console.log("res.data?.score:", res.data?.score)
 
-    resend.emails.send({
+    const { data } = await resend.emails.send({
       from: "form@risk-horizon.be",
       to: email,
       subject: "Votre message Risk Horizon",
@@ -57,12 +56,15 @@ export async function POST(request: Request, response: Response) {
         ",</p><p>Merci pour votre demande. Elle a bien été enregistré et sera prise en charge d'ici très bientôt.</p>",
     })
 
-    resend.emails.send({
+    console.log("email sent to user:", data)
+
+    const { data: data2 } = await resend.emails.send({
       from: "form@risk-horizon.be",
       to: "info@risk-horizon.be",
       subject: "Form : New submission from " + name,
       html: "<p>From: " + name + " (" + email + ")</p><p>Subject: " + subject + "</p><p>Message: " + message + "</p>",
     })
+    console.log("email sent to " + data2)
 
     return new Response("Success", { status: 200 })
   } else {
