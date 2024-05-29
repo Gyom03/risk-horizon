@@ -229,7 +229,7 @@ export default function Component() {
                 />
                 <div className="mt-2 text-center">
                   <h3 className="font-semibold text-gray-50">Alicia Bijnen</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Secrétaire</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Chargée de communication</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -238,17 +238,17 @@ export default function Component() {
                   alt="julien legros"
                   className="rounded-full"
                   height={150}
-                  src="/imgs/anonyme.jpg"
+                  src="/imgs/profils/Ghris.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
                   }}
-                  title="Julien Legros"
+                  title="Yacine Ghris"
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Julien Legros</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Community Manager</p>
+                  <h3 className="font-semibold text-gray-50">Yacine Ghris</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Juriste RGPD</p>
                 </div>
               </div>
             </div>
