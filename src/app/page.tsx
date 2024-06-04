@@ -85,31 +85,7 @@ export default function Component() {
               </div>
             </div>
           </div>
-          {/* <div className="mt-20  mb-5 mx-auto max-w-[90%]">
-            <div className="flex gap-4 justify-center flex-col xs:flex-row mx-5">
-              <Image
-                src={"/imgs/12.jpg"}
-                alt=""
-                width={300}
-                height={300}
-                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto  sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
-              />
-              <Image
-                src={"/imgs/8.jpg"}
-                alt=""
-                width={300}
-                height={300}
-                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto   sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
-              />
-              <Image
-                src={"/imgs/14.webp"}
-                alt=""
-                width={300}
-                height={300}
-                className="rounded-lg	h-[200px] md:h-[250px] object-cover  w-auto   sm:w-[150px] md:w-[250px] lg:w-[300px]  xl:w-[500px]"
-              />
-            </div>
-          </div> */}
+
           <div className="w-full mt-6 md:mt-14 mb-4">
             <div className="mx-10 sm:mx-14 md:mx-30 xl:mx-64 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <Image
@@ -151,19 +127,7 @@ export default function Component() {
             </div>
           </div>
         </section>
-        {/* <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-2 text-gray-50">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Impact</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                We are making a difference by raising awareness and providing the tools to stay safe.
-              </p>
-            </div>
-          </div>
-          <div className="h-screen py-20 w-full">
-            <LayoutGrid cards={cards} />
-          </div>
-        </section> */}
+
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2 text-gray-50">
@@ -219,7 +183,7 @@ export default function Component() {
                   alt="alicia bijnen"
                   className="rounded-full"
                   height={150}
-                  src="/imgs/profils/alicia.webp"
+                  src="/imgs/profils/gg.jpg"
                   style={{
                     aspectRatio: "150/150",
                     objectFit: "cover",
