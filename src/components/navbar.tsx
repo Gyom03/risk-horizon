@@ -34,6 +34,9 @@ function Navbar() {
         >
           Contact
         </Link>
+        <Link className="text-sm font-medium hover:underline underline-offset-4 text-white cursor-pointer" href="/OSI">
+          OSI 2024
+        </Link>
       </nav>
     </header>
   )
