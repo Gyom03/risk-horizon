@@ -14,7 +14,7 @@ function Navbar() {
   const classname = isMenuOpen ? "flex" : "hidden"
   return (
     <header className="px-4 pb-4 md:pb-0 lg:px-6 md:h-16 flex items-center bg-riskbg flex-col md:flex-row">
-      <Link className="mt-3 mx-20 md:mt-0 flex items-center justify-center max-w-[300px]" href="/">
+      <Link className="mt-3  md:mt-0 flex items-center justify-center max-w-[300px]" href="/">
         <Image
           alt="Risk Horizon logo"
           height="250"
