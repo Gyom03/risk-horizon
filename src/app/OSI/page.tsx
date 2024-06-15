@@ -115,11 +115,11 @@ function page() {
             </div>
             <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
-                Au programme : conférences et ateliers
+                Au programme : conférences et exposants
               </p>
               <p className="max-w-[600px] mt-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-md/relaxed dark:text-gray-400">
                 {
-                  "Au programme de cette journée, des conférences et des ateliers seront organisés pour vous permettre de découvrir les dernières technologies et pratiques en matière de cybersécurité."
+                  "Au programme de cette journée exceptionnelle, vous pourrez assister à des conférences passionnantes et participer à diverses activités. En outre, des exposants seront présents pour vous présenter leurs projets open source innovants. Ne manquez pas cette occasion unique de découvrir les tendances actuelles et de rencontrer des experts du domaine."
                 }
               </p>
             </div>
