@@ -63,7 +63,7 @@ function page() {
             </div>
             <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
-                Un salon pour les passionnés de logiciels libres et open source
+                Un salon pour les passionnés de logiciels <br /> libres et open source
               </p>
               <p className="max-w-[600px] mt-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-md/relaxed dark:text-gray-400">
                 {
