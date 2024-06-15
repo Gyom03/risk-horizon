@@ -45,13 +45,13 @@ function page() {
             </div>
           </div>
         </section>
-        <section id="info" className="py-5">
-          <div className="flex py-10 justify-center items-center gap-10">
+        <section id="info" className="py-5 pt-10">
+          <div className="flex flex-col md:flex-row py-5 justify-center items-center gap-10">
             <div>
               <Image
                 loading="lazy"
                 alt="Image 1"
-                className="w-full object-cover rounded-lg h-[200px] md:h-[250px]"
+                className="w-full  object-cover rounded-lg h-[200px] md:h-[250px]"
                 height={500}
                 src="/imgs/osi/foule.webp"
                 style={{
@@ -61,9 +61,9 @@ function page() {
                 width={600}
               />
             </div>
-            <div>
+            <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
-                Un salon pour les passionnés de logiciels libres
+                Un salon pour les passionnés de logiciels libres et open source
               </p>
               <p className="max-w-[600px] mt-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-md/relaxed dark:text-gray-400">
                 {
@@ -72,7 +72,7 @@ function page() {
               </p>
             </div>
           </div>
-          <div className="flex py-10 justify-center items-center gap-10 flex-row-reverse">
+          <div className="flex flex-col md:flex-row-reverse py-5 justify-center items-center gap-10">
             <div>
               <Image
                 loading="lazy"
@@ -87,7 +87,7 @@ function page() {
                 width={600}
               />
             </div>
-            <div>
+            <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
                 Première édition, axé cybersécurité
               </p>
@@ -98,7 +98,7 @@ function page() {
               </p>
             </div>
           </div>
-          <div className="flex py-10 justify-center items-center gap-10">
+          <div className="flex flex-col md:flex-row py-5 justify-center items-center gap-10">
             <div>
               <Image
                 loading="lazy"
@@ -113,7 +113,7 @@ function page() {
                 width={600}
               />
             </div>
-            <div>
+            <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
                 Au programme : conférences et ateliers
               </p>
@@ -125,7 +125,7 @@ function page() {
             </div>
           </div>
         </section>
-        <section className="py-10 ">
+        <section className="py-5 ">
           <div className="flex flex-col p-4 bg-[#020222] max-w-[400px] justify-center mx-auto">
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">Informations :</p>
             <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400 mb-3">19 octobre 2024 - 10H à 18H</p>
@@ -144,9 +144,9 @@ function page() {
         <section className="bg-[#020222] mt-6">
           <div>
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
-              Ils nous font confiance :
+              Nos partenaires :
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-14 py-10">
+            <div className="flex flex-wrap justify-center items-center gap-14 py-5">
               <div>
                 <Link href={"https://ict.evergroup.be/"}>
                   <Image
@@ -158,17 +158,7 @@ function page() {
                   />
                 </Link>
               </div>
-              <div>
-                <Link href={"https://exegol.readthedocs.io/en/latest/"}>
-                  <Image
-                    alt="Image 1"
-                    className="object-cover "
-                    height={160}
-                    src="/imgs/osi/logo/exegold.png"
-                    width={100}
-                  />
-                </Link>
-              </div>
+
               <div>
                 <Link href={"https://www.heh.be/"}>
                   <Image
@@ -180,6 +170,27 @@ function page() {
                   />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="bg-[#020222] ">
+          <div>
+            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
+              Participants :
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-14 py-5">
+              <div>
+                <Link href={"https://exegol.readthedocs.io/en/latest/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={160}
+                    src="/imgs/osi/logo/exegold.png"
+                    width={100}
+                  />
+                </Link>
+              </div>
+
               <div>
                 <Link href={"https://kaisenlinux.org/"}>
                   <Image
