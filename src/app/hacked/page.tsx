@@ -8,7 +8,7 @@ function Page() {
       <p className="mt-4 text-lg">(enfin pas vraiment, vous avez juste laissé votre ordinateur déverrouillé)</p>
       <p className="mt-4 text-lg">{`Mais quelqu'un de malveillant aurais pu vraiment le faire`}</p>
       <Link href="/cybereduque">
-        <Button className="mt-6 bg-white text-black">{`Savoir pourquoi`}</Button>
+        <Button className="mt-6 bg-white text-black hover:bg-gray-300">{`Savoir pourquoi`}</Button>
       </Link>
     </div>
   )
