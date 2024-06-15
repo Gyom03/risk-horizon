@@ -170,15 +170,6 @@ function page() {
                   />
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
-        <section className="bg-[#020222] ">
-          <div>
-            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
-              Participants :
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-14 py-5">
               <div>
                 <Link href={"https://exegol.readthedocs.io/en/latest/"}>
                   <Image
@@ -202,6 +193,17 @@ function page() {
                   />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="">
+          <div>
+            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
+              Vous souhaitez venir exposer / devenir sponsor ?
+            </p>
+            <div className="flex justify-center items-center gap-14 py-5 text-white text-xl">
+              contact : guillaume.rosin@risk-horizon.be
             </div>
           </div>
         </section>
