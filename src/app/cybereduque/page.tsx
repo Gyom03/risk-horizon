@@ -1,7 +1,7 @@
 import { LayoutGrid } from "@/components/ui/layout-grid"
 import Image from "next/image"
 import React from "react"
-
+import Countdown from "react-countdown"
 function Page() {
   return (
     <main className="flex-1">

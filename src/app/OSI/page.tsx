@@ -1,11 +1,20 @@
-import React from "react"
+"use client"
+import React, { use, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Countdown from "react-countdown"
 
 function page() {
+  const [countdown, setCountdown] = useState<JSX.Element>()
+  useEffect(() => {
+    setCountdown(
+      <Countdown date={new Date("2024-10-19T10:00:00")} className="  text-4xl text-white font-bold bg-black/50 p-2" />
+    )
+  }, [])
+
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-riskbg">
+    <div className="flex  min-h-[100dvh] bg-riskbg">
       <main className="flex-1">
         <section
           className="w-full py-6 sm:py-12 md:py-24 lg:py-28 xl:py-32"
@@ -17,32 +26,35 @@ function page() {
             backgroundSize: "cover",
           }}
         >
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_700px]">
-              <div className="flex flex-col justify-center space-y-4 bg-black/60 p-10 rounded-2xl">
-                <div className="space-y-2">
-                  <div className="flex">
-                    <img src="imgs/osi/logo_OSI_white.png" alt="OSI logo" className="object-cover w-64" />
-                  </div>
+          <div className="flex flex-col md:flex-row justify-around items-center">
+            <div className=" px-4 md:px-6">
+              <div className=" gap-6 max-w-xl">
+                <div className="flex flex-col justify-center space-y-4 bg-black/60 p-10 rounded-2xl">
+                  <div className="space-y-2">
+                    <div className="flex">
+                      <img src="imgs/osi/logo_OSI_white.png" alt="OSI logo" className="object-cover w-64" />
+                    </div>
 
-                  <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
-                    19 octobre 2024 | Mons, Belgique
-                  </p>
-                  <p className="max-w-[600px] !mt-6 text-white md:text-lg drop-shadow-lg ">
-                    Cette année, Risk Horizon organise le salon Open Source Immersion (OSI) dédié à la promotion de
-                    logiciels libres et open source.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row !mt-6">
-                  <Link
-                    className=" shadow-inner inline-flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black  transition-colors hover:bg-gray-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="#info"
-                  >
-                    {"Plus d'infos"}
-                  </Link>
+                    <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
+                      19 octobre 2024 | Mons, Belgique
+                    </p>
+                    <p className="max-w-[600px] !mt-6 text-white md:text-lg drop-shadow-lg ">
+                      Cette année, Risk Horizon organise le salon Open Source Immersion (OSI) dédié à la promotion de
+                      logiciels libres et open source.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 min-[400px]:flex-row !mt-6">
+                    <Link
+                      className=" shadow-inner inline-flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black  transition-colors hover:bg-gray-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                      href="#info"
+                    >
+                      {"Plus d'infos"}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="w-[240px] mt-20 md:mt-0 ">{countdown}</div>
           </div>
         </section>
         <section id="info" className="py-5 pt-10">
@@ -158,7 +170,6 @@ function page() {
                   />
                 </Link>
               </div>
-
               <div>
                 <Link href={"https://www.heh.be/"}>
                   <Image
@@ -196,7 +207,6 @@ function page() {
             </div>
           </div>
         </section>
-
         <section className="">
           <div>
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
