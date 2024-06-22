@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Countdown from "react-countdown"
 
-function page() {
+function Page() {
   const [countdown, setCountdown] = useState<JSX.Element>()
   useEffect(() => {
     setCountdown(
@@ -222,4 +222,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
