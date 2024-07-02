@@ -1,12 +1,5 @@
 import Link from "next/link"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
-import { BackgroundBeams } from "@/components/ui/background-beams"
-import { Meteors } from "@/components/ui/meteor"
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
-import { LayoutGrid } from "@/components/ui/layout-grid"
 import Form from "@/components/form"
 export default function Component() {
   return (
@@ -60,27 +53,27 @@ export default function Component() {
             </div>
             <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Formation en Cybersécurité</h3>
+                <h3 className="font-bold tracking-tight">Formation en cybersécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Nous enseignons les meilleures pratiques pour rester en sécurité en ligne.
+                  Pour vous aider à mieux comprendre les menaces en ligne et à protéger vous ou votre entreprise
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Consultation en Sécurité</h3>
+                <h3 className="font-bold tracking-tight">Consultation en sécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Laissez nos experts évaluer et améliorer votre posture de sécurité.
+                  Laissez notre équipe d'experts vous aider à renforcer votre sécurité en ligne en vous conseillant
                 </p>
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Soyez préparé aux menaces cybernétiques grâce à notre analyse minutieuse.
+                  Nous réalisons des analyses de sécurité approfondies pour identifier les vulnérabilités potentielles
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Protection des Données</h3>
+                <h3 className="font-bold tracking-tight">Protection des données</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Apprenez à protéger vos données des regards indiscrets.
+                  Apprenez à protéger vos données personnelles et professionnelles contre les cyberattaques
                 </p>
               </div>
             </div>
