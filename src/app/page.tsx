@@ -61,7 +61,7 @@ export default function Component() {
               <div className="space-y-2">
                 <h3 className="font-bold tracking-tight">Consultation en sécurité</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Laissez notre équipe d'experts vous aider à renforcer votre sécurité en ligne en vous conseillant
+                  {`Laissez notre équipe d'experts vous aider à renforcer votre sécurité en ligne en vous conseillant`}
                 </p>
               </div>
               <div className="space-y-2">
