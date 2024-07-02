@@ -50,6 +50,10 @@ function Page() {
                     >
                       {"Plus d'infos"}
                     </Link>
+
+                    <Link href={"https://www.eventbrite.be/e/open-source-immersion-tickets-921737229867"} className="">
+                      <Button className="bg-[#050537]">{"S'inscrire"}</Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -137,7 +141,93 @@ function Page() {
             </div>
           </div>
         </section>
-        <section className="py-5 ">
+
+        <section className="bg-muted mt-20 pb-5 md:pb-0">
+          <div>
+            <p className="text-3xl text-black font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
+              Nos partenaires majeurs :
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
+              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://www.heh.be/"}>
+                  <Image
+                    alt="Image"
+                    className="object-contain aspect-video md:aspect-square scale-[1.2] md:scale-[1.5]"
+                    height={200}
+                    src="/imgs/osi/logo/HEH.png"
+                    width={200}
+                  />
+                </Link>
+              </div>
+
+              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://www.nrj.be/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-contain  aspect-video md:aspect-square scale-[1] md:scale-[0.7]"
+                    height={160}
+                    src="/imgs/osi/logo/NRJ.png"
+                    width={300}
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className=" pt-5 ">
+          <div>
+            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center mb-10 mt-8">
+              Nos partenaires :
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
+              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://ict.evergroup.be/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover"
+                    height={200}
+                    src="/imgs/osi/logo/Evergroup.png"
+                    width={200}
+                  />
+                </Link>
+              </div>
+              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://exegol.readthedocs.io/en/latest/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover scale-[0.9] md:scale-[1]"
+                    height={160}
+                    src="/imgs/osi/logo/exegold.png"
+                    width={100}
+                  />
+                </Link>
+              </div>
+              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://kaisenlinux.org/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover scale-[1.1] md:scale-[1]"
+                    height={160}
+                    src="/imgs/osi/logo/kaisen.png"
+                    width={300}
+                  />
+                </Link>
+              </div>
+              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://easi.net/fr"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={160}
+                    src="/imgs/osi/logo/easi.png"
+                    width={300}
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="mt-20">
           <div className="flex flex-col p-4 bg-[#020222] max-w-[400px] justify-center mx-auto">
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">Informations :</p>
             <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400 mb-3">19 octobre 2024 - 10H à 18H</p>
@@ -153,67 +243,18 @@ function Page() {
             </Link>
           </div>
         </section>
-        <section className="bg-[#020222] mt-6">
-          <div>
-            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
-              Nos partenaires :
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-14 py-5">
-              <div>
-                <Link href={"https://ict.evergroup.be/"}>
-                  <Image
-                    alt="Image 1"
-                    className="object-cover"
-                    height={200}
-                    src="/imgs/osi/logo/Evergroup.png"
-                    width={200}
-                  />
-                </Link>
-              </div>
-              <div>
-                <Link href={"https://www.heh.be/"}>
-                  <Image
-                    alt="Image 1ZDZD"
-                    className="object-cover "
-                    height={200}
-                    src="/imgs/osi/logo/HEH.png"
-                    width={200}
-                  />
-                </Link>
-              </div>
-              <div>
-                <Link href={"https://exegol.readthedocs.io/en/latest/"}>
-                  <Image
-                    alt="Image 1"
-                    className="object-cover "
-                    height={160}
-                    src="/imgs/osi/logo/exegold.png"
-                    width={100}
-                  />
-                </Link>
-              </div>
-
-              <div>
-                <Link href={"https://kaisenlinux.org/"}>
-                  <Image
-                    alt="Image 1"
-                    className="object-cover "
-                    height={160}
-                    src="/imgs/osi/logo/kaisen.png"
-                    width={300}
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="">
+        <section className="bg-[#020222] mt-20">
           <div>
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
               Vous souhaitez venir exposer / devenir sponsor ?
             </p>
-            <div className="flex justify-center items-center gap-14 py-5 text-white text-xl">
-              contact : guillaume.rosin@risk-horizon.be
+            <div className="flex flex-col md:flex-row py-5 md:justify-center gap-4">
+              <div className="flex  justify-center items-center gap-14  text-white text-xl text-nowrap py-2">
+                Contact :
+              </div>
+              <div className="flex justify-center items-center gap-14  text-white text-xl text-nowrap">
+                guillaume.rosin@risk-horizon.be
+              </div>
             </div>
           </div>
         </section>
