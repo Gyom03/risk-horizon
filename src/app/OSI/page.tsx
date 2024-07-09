@@ -180,7 +180,18 @@ function Page() {
               Nos partenaires :
             </p>
             <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
-              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://www.bhc.be/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={160}
+                    src="/imgs/osi/logo/bhc_BLANC.png"
+                    width={300}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://ict.evergroup.be/"}>
                   <Image
                     alt="Image 1"
@@ -191,29 +202,29 @@ function Page() {
                   />
                 </Link>
               </div>
-              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://exegol.readthedocs.io/en/latest/"}>
                   <Image
                     alt="Image 1"
                     className="object-cover scale-[0.9] md:scale-[1]"
-                    height={160}
-                    src="/imgs/osi/logo/exegold.png"
-                    width={100}
+                    height={300}
+                    src="/imgs/osi/logo/exegol.png"
+                    width={300}
                   />
                 </Link>
               </div>
-              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://kaisenlinux.org/"}>
                   <Image
                     alt="Image 1"
                     className="object-cover scale-[1.1] md:scale-[1]"
-                    height={160}
+                    height={300}
                     src="/imgs/osi/logo/kaisen.png"
                     width={300}
                   />
                 </Link>
               </div>
-              <div className="w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://easi.net/fr"}>
                   <Image
                     alt="Image 1"
