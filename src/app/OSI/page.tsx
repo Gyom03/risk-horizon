@@ -152,10 +152,10 @@ function Page() {
                 <Link href={"https://www.heh.be/"}>
                   <Image
                     alt="Image"
-                    className="object-contain aspect-video md:aspect-square scale-[1.2] md:scale-[1.5]"
-                    height={200}
+                    className="object-contain aspect-video md:aspect-square scale-[1] "
+                    height={300}
                     src="/imgs/osi/logo/HEH.png"
-                    width={200}
+                    width={300}
                   />
                 </Link>
               </div>
@@ -164,8 +164,8 @@ function Page() {
                 <Link href={"https://www.nrj.be/"}>
                   <Image
                     alt="Image 1"
-                    className="object-contain  aspect-video md:aspect-square scale-[1] md:scale-[0.7]"
-                    height={160}
+                    className="object-contain  aspect-video md:aspect-square scale-[0.9] md:scale-[0.65]"
+                    height={300}
                     src="/imgs/osi/logo/NRJ.png"
                     width={300}
                   />
@@ -179,7 +179,7 @@ function Page() {
             <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight text-center mb-10 mt-8">
               Nos partenaires :
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
+            <div className="flex flex-wrap  justify-center items-center gap-0 md:gap-14">
               <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://www.bhc.be/"}>
                   <Image
@@ -224,6 +224,8 @@ function Page() {
                   />
                 </Link>
               </div>
+            </div>
+            <div className="flex flex-wrap  justify-center items-center gap-0 md:gap-14">
               <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://easi.net/fr"}>
                   <Image
@@ -232,6 +234,28 @@ function Page() {
                     height={160}
                     src="/imgs/osi/logo/easi.png"
                     width={300}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://easi.net/fr"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={160}
+                    src="/imgs/osi/logo/akcustom.webp"
+                    width={300}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://easi.net/fr"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={150}
+                    src="/imgs/osi/logo/chimay.png"
+                    width={150}
                   />
                 </Link>
               </div>
