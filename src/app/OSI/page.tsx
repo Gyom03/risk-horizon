@@ -180,7 +180,18 @@ function Page() {
               Nos partenaires :
             </p>
             <div className="flex flex-wrap  justify-center items-center gap-0 md:gap-14">
-              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://www.zebrathrust.be/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover"
+                    height={400}
+                    src="/imgs/osi/logo/zebra2.png"
+                    width={400}
+                  />
+                </Link>
+              </div>
+              <div className="hidden mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square  justify-center items-center">
                 <Link href={"https://www.bhc.be/"}>
                   <Image
                     alt="Image 1"
@@ -238,7 +249,7 @@ function Page() {
                 </Link>
               </div>
               <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
-                <Link href={"https://easi.net/fr"}>
+                <Link href={"https://akcustom.be"}>
                   <Image
                     alt="Image 1"
                     className="object-cover "
@@ -249,7 +260,7 @@ function Page() {
                 </Link>
               </div>
               <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
-                <Link href={"https://easi.net/fr"}>
+                <Link href={"https://chimay.com/"}>
                   <Image
                     alt="Image 1"
                     className="object-cover "
