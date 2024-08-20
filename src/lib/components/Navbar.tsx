@@ -64,7 +64,7 @@ function Navbar() {
                       src="/logo_line_white.png"
                       width="250"
                       height="150"
-                      className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-10 md:ml-5 h-auto cursor-pointer"
+                      className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-6 md:ml-5 h-auto cursor-pointer"
                       onClick={() => router.push("/")}
                     />
                   </div>
