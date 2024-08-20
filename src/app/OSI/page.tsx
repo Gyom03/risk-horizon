@@ -2,7 +2,8 @@
 import React, { use, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Button } from "$/lib/components/ui/button"
+
 import Countdown from "react-countdown"
 
 function Page() {
@@ -249,6 +250,7 @@ function Page() {
                 </Link>
               </div>
               <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+
                 <Link href={"https://akcustom.be"}>
                   <Image
                     alt="Image 1"
