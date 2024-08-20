@@ -5,14 +5,13 @@ import { Rethink_Sans } from "next/font/google"
 import { Libre_Franklin } from "next/font/google"
 import Link from "next/link"
 import Image from "next/image"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import Navbar from "@/lib/components/Navbar"
+import Footer from "@/lib/components/footer"
 import type { Viewport } from "next"
-import GoogleCaptchaWrapper from "@/components/google-captcha-wrapper"
+import GoogleCaptchaWrapper from "@/lib/components/google-captcha-wrapper"
 import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import Querywrapper from "@/components/query-provider"
-import { Toaster, toast } from "sonner"
-import { CSPostHogProvider } from "@/lib/provider"
+import Querywrapper from "@/lib/components/query-provider"
+import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/react"
 
 import Script from "next/script"
@@ -38,19 +37,53 @@ export const metadata: Metadata = {
   title: "Risk Horizon ASBL - Cybersécurité",
   description:
     "Risk Horizon ASBL est une association à but non lucratif qui vise à promouvoir la cybersécurité et la protection des données en ligne.",
-  authors: [{ name: "Risk Horizon" }, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
+  authors: [{ name: "Risk Horizon" }, { name: "Maxime Curon"}, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
   keywords: [
     "Cybersécurité",
     "Risk Horizon",
     "ASBL",
     "Security",
     "Data protection",
-    "Protection en ligne",
+    "Protection des données",
+    "Protection de la vie privée",
+    "Privacy",
+    "Privacy protection",
+    "Cybersecurity",
+    "Sécurité informatique",
+    "Sécurité des données",
+    "Data security",
+    "Sécurité des réseaux",
+    "Network security",
+    "Sécurité des applications",
+    "Application security",
+    "Sécurité des logiciels", 
+    "Software security",
+    "Sécurité des systèmes d'information",
+    "Information system security",
+    "Sécurité des systèmes informatiques",
+    "Sécurité des systèmes d'exploitation",
+    "Operating system security",
+    "Sécurité des systèmes embarqués",
+    "Embedded system security",
+    "Sécurité des systèmes industriels",
+    "Industrial system security",
+    "Sécurité des systèmes de contrôle",
+    "Control system security",
+    "Sécurité des systèmes de gestion",
+    "Management system security",
+    "Sécurité des systèmes de communication",
+    "Communication system security",
+    "Sécurité des systèmes de transport",
+    "Transport system security",
+    "Sécurité des systèmes",
+    "System security",
+    "Maxime Curon",
     "Guillaume Richard",
     "Guillaume Rosin",
     "Guillaume",
     "Richard",
     "Rosin",
+    "Curon",
   ],
   creator: "Risk Horizon",
   publisher: "Risk Horizon",
@@ -82,9 +115,9 @@ export default function RootLayout({
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7L0NDNK9"></Script>
         <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4K7L0NDNK9');`}
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4K7L0NDNK9');`}
         </Script>
       </head>
       {/* <CSPostHogProvider> */}

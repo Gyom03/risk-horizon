@@ -2,30 +2,31 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import NavbarContent from "./navbarContent"
-import { Disclosure, Transition } from '@headlessui/react'
+import { usePathname, useRouter } from "next/navigation"
+import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from "react"
 import { Menu } from "lucide-react"
 import { useEffect } from "react"
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // J'ai pas compris le truc avec hacked ¯\_(ツ)_/¯
   const path = usePathname()
   if (path === "/hacked") return null
 
 const navigation = [
   { name: 'Accueil', href: '/', current: false },
-  { name: 'Découvrir Risk Horizon', href: '/Missions', current: false },
-  { name: 'À propos de nous', href: '/A-propos', current: false },
+  { name: 'Mission', href: '/Missions', current: false },
+  { name: 'À propos', href: '/A-propos', current: false },
   { name: 'Contact', href: '/Contact', current: false },
-  { name: 'Salon OSI 2024', href: '/OSI', current: false },
+  { name: 'OSI 2024', href: '/OSI', current: false },
 ]
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
+const router = useRouter();
 
   useEffect(() => {
     navigation.map((item) => {
@@ -38,18 +39,18 @@ function classNames(...classes: string[]) {
   }
   , [navigation])
 
-  const classname = isMenuOpen ? "flex" : "hidden"
+  // const classname = isMenuOpen ? "flex" : "hidden"
   return (
     <header className="px-4 pb-4 md:pb-0 lg:px-6 md:h-16 flex items-center bg-riskbg flex-col md:flex-row">
       <div className="mt-3  md:mt-0 flex items-center justify-center max-w-[300px]">
-        <Disclosure as="nav" className="bg-gray-800 absolute top-0 w-full z-1">
+        <Disclosure as="nav" className="bg-[#040437] absolute top-0 w-full z-1">
         {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button 
+                <DisclosureButton 
                   className=" absolute 
                               inline-flex 
                               items-center 
@@ -57,7 +58,7 @@ function classNames(...classes: string[]) {
                               rounded-md 
                               p-2 
                               text-gray-400 
-                              hover:bg-gray-700 
+                              hover:bg-[#040437]
                               hover:text-white 
                               focus:outline-none 
                               focus:ring-2 
@@ -70,7 +71,7 @@ function classNames(...classes: string[]) {
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button>
+                </DisclosureButton>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
@@ -79,11 +80,9 @@ function classNames(...classes: string[]) {
                     height="250"
                     src="/logo_line_white.png"
                     width="300"
-                    className="w-[220px] md:w-[300px]"
+                    className="w-[220px] md:w-[300px] cursor-pointer"
+                    onClick={() =>  router.push('/')}
                   />
-                  <p className="text-white ml-2">
-                    Risk Horizon asbl
-                  </p>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4 absolute">
@@ -94,7 +93,7 @@ function classNames(...classes: string[]) {
                         className={
                           classNames(
                             item.current ? 
-                            'bg-gray-900 text-white' 
+                            'bg-[#BC86FF] text-white' 
                             : 
                             'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'rounded-md px-3 py-2 text-sm font-medium')}
@@ -108,7 +107,7 @@ function classNames(...classes: string[]) {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -116,8 +115,8 @@ function classNames(...classes: string[]) {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current ? 'bg-[#5f3494] text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium flex justify-center'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
@@ -125,7 +124,7 @@ function classNames(...classes: string[]) {
                 </Disclosure.Button>
               ))}
             </div>
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </>
       )}
       </Disclosure>
