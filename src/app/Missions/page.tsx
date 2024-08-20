@@ -10,7 +10,7 @@ function Page() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="pt-8 flex flex-col min-h-[100dvh] bg-riskbg items-center">
+    <div className="pt-16 flex-col min-h-[100dvh] bg-riskbg items-center">
       <div className="text-white max-w-5xl blog-section">
         <div className="p-8 mt-12 w-full">
           <div className="mb-8">
