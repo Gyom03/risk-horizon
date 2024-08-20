@@ -1,8 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import fb from "../public/facebook.svg"
-import linkedin from "../public/linkedin.svg"
+
 
 function Footer() {
   return (
@@ -15,7 +14,7 @@ function Footer() {
         <p className="text-xs text-gray-500 dark:text-gray-400 mr-5">RPM tribunal du commerce de Mons</p>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mr-2">N° d&apos;entreprise : 1008.675.581</p>
-        <Link href={"/Confidentialite"}>
+        <Link href={"/policy"}>
           <p className="text-xs text-gray-500 dark:text-gray-400 mr-2 underline">Politique de confidentialité</p>
         </Link>
         <Link
