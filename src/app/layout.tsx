@@ -74,6 +74,7 @@ export const metadata: Metadata = {
     "Sécurité des systèmes",
     "System security",
     "Maxime Curon",
+    "Protection en ligne",
     "Guillaume Richard",
     "Guillaume Rosin",
     "Guillaume",
@@ -119,13 +120,11 @@ export default function RootLayout({
       {/* <CSPostHogProvider> */}
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
 <body>
-  
-
         <Toaster richColors />
         <Querywrapper>
           <GoogleCaptchaWrapper>
             <Navbar />
-              {children}
+            {children}
             <Footer />
           </GoogleCaptchaWrapper>
         </Querywrapper>
