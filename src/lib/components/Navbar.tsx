@@ -9,9 +9,9 @@ import { useEffect, useMemo } from "react"
 
 const navigation = [
   { name: "Accueil", href: "/", current: false },
-  { name: "Mission", href: "/missions", current: false },
+  { name: "Mission", href: "/Missions", current: false },
   { name: "À propos", href: "/about", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "Contact", href: "/Contact", current: false },
   { name: "OSI 2024", href: "/OSI", current: false },
 ]
 
