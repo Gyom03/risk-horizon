@@ -5,26 +5,26 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from "react"
-import { Menu } from "lucide-react"
-import { useEffect } from "react"
-function Navbar() {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false)
-  // J'ai pas compris le truc avec hacked ¯\_(ツ)_/¯
-  const path = usePathname()
-  if (path === "/hacked") return null
+import { useEffect, useMemo } from "react"
+
 
 const navigation = [
   { name: 'Accueil', href: '/', current: false },
-  { name: 'Mission', href: '/Missions', current: false },
-  { name: 'À propos', href: '/A-propos', current: false },
-  { name: 'Contact', href: '/Contact', current: false },
+  { name: 'Mission', href: '/missions', current: false },
+  { name: 'À propos', href: '/about', current: false },
+  { name: 'Contact', href: '/contact', current: false },
   { name: 'OSI 2024', href: '/OSI', current: false },
-]
+];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
+
+function Navbar() {
+  // const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // J'ai pas compris le truc avec hacked ¯\_(ツ)_/¯
+  // const path = usePathname();
+  // if (path === "/hacked") return null;
 
 const router = useRouter();
 
@@ -37,7 +37,8 @@ const router = useRouter();
       }
     })
   }
-  , [navigation])
+  , [])
+
 
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
@@ -76,10 +77,10 @@ const router = useRouter();
                 <div className="flex flex-shrink-0 items-center">
                   <Image
                     alt="Risk Horizon logo"
-                    height="150"
                     src="/logo_line_white.png"
                     width="220"
-                    className="w-[220px] cursor-pointer"
+                    height="150"
+                    className="w-[220px] h-auto cursor-pointer"
                     onClick={() =>  router.push('/')}
                   />
                 </div>
@@ -142,3 +143,4 @@ const router = useRouter();
 }
 
 export default Navbar
+
