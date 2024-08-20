@@ -9,9 +9,9 @@ import { useEffect, useMemo } from "react"
 
 const navigation = [
   { name: "Accueil", href: "/", current: false },
-  { name: "Mission", href: "/Missions", current: false },
+  { name: "Mission", href: "/missions", current: false },
   { name: "À propos", href: "/about", current: false },
-  { name: "Contact", href: "/Contact", current: false },
+  { name: "Contact", href: "/contact", current: false },
   { name: "OSI 2024", href: "/OSI", current: false },
 ]
 
@@ -40,14 +40,14 @@ function Navbar() {
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
     <div className=" bg-riskbg  ">
-      <Disclosure as="nav" className="bg-[#040437] absolute top-0 w-full z-1">
+      <Disclosure as="nav" className="bg-[#040437]  absolute top-0 w-full z-1">
         {({ open }: { open: boolean }) => (
           <>
-            <div className=" px-2 sm:px-6 lg:px-8">
+            <div className=" ">
               <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
-                  <DisclosureButton className=" absolute inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-[#040437]hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <DisclosureButton className="m-2 absolute inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-[#040437]hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -58,18 +58,18 @@ function Navbar() {
                   </DisclosureButton>
                 </div>
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div className="flex flex-shrink-0 items-center">
+                  <div className="flex items-center">
                     <Image
                       alt="Risk Horizon logo"
                       src="/logo_line_white.png"
-                      width="300"
-                      height="180"
-                      className="w-[300px] h-auto cursor-pointer"
+                      width="250"
+                      height="150"
+                      className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-10 md:ml-5 h-auto cursor-pointer"
                       onClick={() => router.push("/")}
                     />
                   </div>
                   <div className="hidden w-full w-min-[90px] relative right-3 sm:ml-6 sm:block">
-                    <div className="flex w-full justify-end  absolute">
+                    <div className="flex flex-shrink-1 w-full ml-4 justify-end items-center">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
@@ -78,7 +78,7 @@ function Navbar() {
                             item.current
                               ? "bg-[#5f3494] text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "rounded-md px-3 mr-1 py-2 text-[16px] text-nowrap font-medium"
+                            "rounded-sm px-3 mr-1 py-2 text-[16px] text-nowrap font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
@@ -94,18 +94,18 @@ function Navbar() {
             <DisclosurePanel className="md:hidden">
               <div className="space-y-1 px-2  pb-3 pt-2">
                 {navigation.map((item) => (
-                  <Disclosure.Button
+                  <DisclosureButton
                     key={item.name}
                     as="a"
                     href={item.href}
                     className={classNames(
                       item.current ? "bg-[#5f3494] text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block rounded-md px-3 py-2 text-base font-medium flex justify-center"
+                      "rounded-md px-3 py-2 text-base font-medium flex justify-center"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </DisclosureButton>
                 ))}
               </div>
             </DisclosurePanel>

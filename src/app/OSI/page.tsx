@@ -1,5 +1,5 @@
 "use client"
-import React, { use, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "$/lib/components/ui/button"
@@ -15,7 +15,7 @@ function Page() {
   }, [])
 
   return (
-    <div className="flex  min-h-[100dvh] bg-riskbg">
+    <div className="flex  min-h-[100dvh] mt-16 bg-riskbg">
       <main className="flex-1">
         <section
           className="w-full py-6 sm:py-12 md:py-24 lg:py-28 xl:py-32"
