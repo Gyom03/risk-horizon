@@ -1,18 +1,14 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
-import { Rethink_Sans } from "next/font/google"
-import { Libre_Franklin } from "next/font/google"
-import Link from "next/link"
-import Image from "next/image"
-import Navbar from "@/lib/components/Navbar"
-import Footer from "@/lib/components/footer"
+import Navbar from "$/lib/components/Navbar"
+import Footer from "$/lib/components/footer"
 import type { Viewport } from "next"
-import GoogleCaptchaWrapper from "@/lib/components/google-captcha-wrapper"
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import Querywrapper from "@/lib/components/query-provider"
+import GoogleCaptchaWrapper from "$/lib/components/google-captcha-wrapper"
+import { QueryClient } from "@tanstack/react-query"
+import Querywrapper from "$/lib/components/query-provider"
 import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/react"
+import "$/lib/styles/globals.css"
 
 import Script from "next/script"
 const queryClient = new QueryClient()
@@ -122,18 +118,19 @@ export default function RootLayout({
       </head>
       {/* <CSPostHogProvider> */}
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
-      <body className={inter.className}>
+<body>
+  
+
         <Toaster richColors />
         <Querywrapper>
           <GoogleCaptchaWrapper>
             <Navbar />
-            {children}
+              {children}
             <Footer />
           </GoogleCaptchaWrapper>
         </Querywrapper>
         <Analytics />
-      </body>
-      {/* </CSPostHogProvider> */}
+</body> 
     </html>
   )
 }

@@ -41,9 +41,8 @@ const router = useRouter();
 
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
-    <header className="px-4 pb-4 md:pb-0 lg:px-6 md:h-16 flex items-center bg-riskbg flex-col md:flex-row">
-      <div className="mt-3  md:mt-0 flex items-center justify-center max-w-[300px]">
-        <Disclosure as="nav" className="bg-[#040437] absolute top-0 w-full z-1">
+    <div className=" bg-riskbg  ">
+     <Disclosure as="nav" className="bg-[#040437] absolute top-0 w-full z-1">
         {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -73,19 +72,19 @@ const router = useRouter();
                   )}
                 </DisclosureButton>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-end sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Image
                     alt="Risk Horizon logo"
-                    height="250"
+                    height="150"
                     src="/logo_line_white.png"
-                    width="300"
-                    className="w-[220px] md:w-[300px] cursor-pointer"
+                    width="220"
+                    className="w-[220px] cursor-pointer"
                     onClick={() =>  router.push('/')}
                   />
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4 absolute">
+                <div className="hidden w-full w-min-[90px] relative right-3 sm:ml-6 sm:block">
+                  <div className="flex  absolute">
                     {navigation.map((item) => (
                       <a
                         key={item.name}  
@@ -93,10 +92,10 @@ const router = useRouter();
                         className={
                           classNames(
                             item.current ? 
-                            'bg-[#BC86FF] text-white' 
+                            'bg-[#5f3494] text-white' 
                             : 
                             'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'rounded-md px-3 py-2 text-sm font-medium')}
+                            'rounded-md px-3 mr-1 py-2 text-[16px] text-nowrap font-medium')}
                         aria-current={item.current ? 'page' : undefined}>
                           {item.name}
                       </a>
@@ -107,8 +106,8 @@ const router = useRouter();
             </div>
           </div>
 
-          <DisclosurePanel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          <DisclosurePanel className="md:hidden">
+            <div className="space-y-1 px-2  pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
@@ -128,7 +127,6 @@ const router = useRouter();
         </>
       )}
       </Disclosure>
-      </div>
       {/* <nav className="w-full ">
         <NavbarContent className=" hidden md:flex md:ml-auto  justify-end gap-4 sm:gap-6 flex-col md:flex-row mt-6 md:mt-0 items-center md:items-start mb-4 md:mb-0" />
 
@@ -139,7 +137,7 @@ const router = useRouter();
           }
         />
       </nav> */}
-    </header>
+    </div>
   )
 }
 
