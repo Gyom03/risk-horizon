@@ -10,7 +10,7 @@ function Page() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="pt-16 flex-col min-h-[100dvh] bg-riskbg items-center">
+    <div className="pt-16 min-h-[100dvh] bg-riskbg w-full flex justify-center">
       <div className="text-white max-w-5xl blog-section">
         <div className="p-8 mt-12 w-full">
           <div className="mb-8">
@@ -20,7 +20,7 @@ function Page() {
 
           <p className="mb-10">
             {
-              "Nous sommes fier de vous annoncer le début de nos opérations en tant qu'ASBL. Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau d'expertise technique. Nous croyons fermement que la cybersécurité devrait être accessible et compréhensible pour tous. Notre engagement absolu est de vous offrir une tranquillité d'esprit totale en matière de sécurité."
+              "Nous sommes fiers de vous annoncer le début de nos opérations en tant qu'ASBL. Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau d'expertise technique. Nous croyons fermement que la cybersécurité devrait être accessible et compréhensible pour tous. Notre engagement absolu est de vous offrir une tranquillité d'esprit totale en matière de sécurité."
             }
           </p>
 
