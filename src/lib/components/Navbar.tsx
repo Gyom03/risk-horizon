@@ -68,17 +68,15 @@ function Navbar() {
                       onClick={() => router.push("/")}
                     />
                   </div>
-                  <div className="hidden w-full w-min-[90px] relative right-3 sm:ml-6 sm:block">
-                    <div className="flex flex-shrink-1 w-full ml-4 justify-end items-center">
+                  <div className="hidden w-full w-min-[90px] relative right-3 sm:ml-6 sm:block mr-4">
+                    <div className="flex flex-shrink-1 w-full ml-4 justify-end items-center ">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current
-                              ? "bg-[#5f3494] text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "rounded-sm px-3 mr-1 py-2 text-[16px] text-nowrap font-medium"
+                            item.current ? "bg-[#5f3494] text-white" : "text-white hover:bg-gray-700 hover:text-white",
+                            "rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
