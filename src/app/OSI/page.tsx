@@ -250,7 +250,17 @@ function Page() {
                 </Link>
               </div>
               <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
-
+                <Link href={"https://kasfaleia.com"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover "
+                    height={160}
+                    src="/imgs/osi/logo/kasfaleia.png"
+                    width={300}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://akcustom.be"}>
                   <Image
                     alt="Image 1"
