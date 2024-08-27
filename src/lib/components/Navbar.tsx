@@ -20,10 +20,8 @@ function classNames(...classes: string[]) {
 }
 
 function Navbar() {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false)
-  // J'ai pas compris le truc avec hacked ¯\_(ツ)_/¯
-  // const path = usePathname();
-  // if (path === "/hacked") return null;
+  const path = usePathname()
+  if (path === "/hacked") return null
 
   const router = useRouter()
 
