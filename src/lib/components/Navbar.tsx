@@ -20,9 +20,6 @@ function classNames(...classes: string[]) {
 }
 
 function Navbar() {
-  const path = usePathname()
-  if (path === "/hacked") return null
-
   const router = useRouter()
 
   useEffect(() => {
@@ -34,7 +31,8 @@ function Navbar() {
       }
     })
   }, [])
-
+  const path = usePathname()
+  if (path === "/hacked") return null
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
     <div className=" bg-riskbg  ">
