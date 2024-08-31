@@ -1,9 +1,8 @@
 import React from "react"
-import Form from "$/lib/components/form"
 import Image from "next/image"
-import { Separator } from "$/lib/components/ui/separator"
+import Form from "$/components/form"
 import Link from "next/link"
-
+import { Separator } from "$/components/ui/separator"
 function Page() {
   return (
     <div className=" min-h-[calc(100dvh-7rem)]  bg-gray-100">

@@ -1,6 +1,4 @@
-
-import { LayoutGrid } from "$/lib/components/ui/layout-grid"
-
+import { LayoutGrid } from "$/components/ui/layout-grid"
 import Image from "next/image"
 import React from "react"
 import Countdown from "react-countdown"

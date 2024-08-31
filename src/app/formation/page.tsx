@@ -53,7 +53,7 @@ export default function Component() {
               </CardHeader>
               <CardContent>
                 <Brain className="h-12 w-12 mb-4" />
-                <p>Nous prenons soins de rendre nos formations interactives afin de gamifier l'expérience</p>
+                <p>Nous prenons soins de rendre nos formations interactives afin de gamifier l&apos;expérience</p>
               </CardContent>
             </Card>
           </div>
