@@ -1,14 +1,13 @@
 import React from "react"
-import { Button } from "$/lib/components/ui/button"
-import { Input } from "$/lib/components/ui/input"
-import { Textarea } from "$/lib/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import { Facebook, MailboxIcon } from "lucide-react"
 
-import Form from "$/lib/components/form"
+import Form from "@/components/form"
 import Image from "next/image"
-import { Separator } from "$/lib/components/ui/separator"
-
+import { Separator } from "@/components/ui/separator"
 
 function Page() {
   return (
