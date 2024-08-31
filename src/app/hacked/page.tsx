@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Button } from "$/lib/components/ui/button"
+import { Button } from "$/components/ui/button"
 
 import Link from "next/link"
 import { TriangleAlert } from "lucide-react"

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import Navbar from "$/lib/components/Navbar"
-import Footer from "$/lib/components/footer"
+import Navbar from "$/components/Navbar"
+import Footer from "$/components/footer"
 import type { Viewport } from "next"
 import GoogleCaptchaWrapper from "$/utils/analytics/google-captcha-wrapper"
 import { QueryClient } from "@tanstack/react-query"
@@ -33,7 +33,12 @@ export const metadata: Metadata = {
   title: "Risk Horizon ASBL - Cybersécurité",
   description:
     "Risk Horizon ASBL est une association à but non lucratif qui vise à promouvoir la cybersécurité et la protection des données en ligne.",
-  authors: [{ name: "Risk Horizon" }, { name: "Maxime Curon"}, { name: "Guillaume Richard" }, { name: "Guillaume Rosin" }],
+  authors: [
+    { name: "Risk Horizon" },
+    { name: "Maxime Curon" },
+    { name: "Guillaume Richard" },
+    { name: "Guillaume Rosin" },
+  ],
   keywords: [
     "Cybersécurité",
     "Risk Horizon",
@@ -52,7 +57,7 @@ export const metadata: Metadata = {
     "Network security",
     "Sécurité des applications",
     "Application security",
-    "Sécurité des logiciels", 
+    "Sécurité des logiciels",
     "Software security",
     "Sécurité des systèmes d'information",
     "Information system security",
@@ -119,7 +124,7 @@ export default function RootLayout({
       </head>
       {/* <CSPostHogProvider> */}
       <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
-<body>
+      <body>
         <Toaster richColors />
         <Querywrapper>
           <GoogleCaptchaWrapper>
@@ -129,7 +134,7 @@ export default function RootLayout({
           </GoogleCaptchaWrapper>
         </Querywrapper>
         <Analytics />
-</body> 
+      </body>
     </html>
   )
 }
