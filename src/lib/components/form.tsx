@@ -38,7 +38,15 @@ function Form({ extended, className }: FormProps) {
     })
   }
 
-  const { data, mutate, isPending, isSuccess, isError, error, status } = useMutation({
+  const {
+    data: dqssd,
+    mutate,
+    isPending,
+    isSuccess,
+    isError,
+    error,
+    status,
+  } = useMutation({
     mutationKey: ["submit"],
     mutationFn: async (token: string) => {
       const { data } = await axios.post(
