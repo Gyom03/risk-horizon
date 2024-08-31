@@ -65,7 +65,7 @@ export default function Component() {
   return (
     <div className="flex h-screen bg-background mt-16">
       {/* Sidebar - always visible */}
-      <aside className="w-64 border-r overflow-auto">
+      <aside className="w-64 border-r overflow-auto !font-bold">
         <ScrollArea className="h-full w-full">
           {categories.map((category, index) => (
             <Collapsible
@@ -76,7 +76,7 @@ export default function Component() {
             >
               <CollapsibleTrigger asChild>
                 <Button variant="ghost" className="flex w-full items-center justify-between p-4 font-medium">
-                  <span className="text-left truncate mr-2">{category.name}</span>
+                  <span className="text-left truncate mr-2 font-bold">{category.name}</span>
                   <ChevronRight
                     className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
                       openCategories[category.name] ? "rotate-90" : ""
