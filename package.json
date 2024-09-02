@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.3.3",
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
     "@radix-ui/react-collapsible": "^1.1.0",
@@ -33,6 +34,7 @@
     "react-modal": "^3.16.1",
     "react-smart-masonry": "^2.0.2",
     "resend": "^3.5.0",
+    "risk-horizon": "file:",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
@@ -40,7 +42,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20.16.1",
+    "@types/node": "^20.16.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-google-recaptcha": "^2.1.9",
@@ -48,7 +50,9 @@
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.2",
     "postcss": "^8.4.41",
+    "prisma": "^5.19.0",
     "tailwindcss": "^3.4.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
 }
