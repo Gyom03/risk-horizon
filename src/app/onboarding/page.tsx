@@ -43,7 +43,6 @@ export default function OnboardingComponent () {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const res = await completeOnboarding(formData)
-    console.log(res.message)
     mutate(user?.primaryEmailAddress?.emailAddress ?? '')
     if (res?.message) {
       // Reloads the user's data from Clerk's API
