@@ -15,7 +15,7 @@ export default function OnboardingComponent () {
   const { user } = useUser()
   const router = useRouter()
 
-  const { data, mutate, isPending, status } = useMutation({
+  const { data, mutate, isPending } = useMutation({
     mutationKey: ['subscribeToNewsletter'],
     mutationFn: async (email: string) => {
       const { data } = await axios.post(
@@ -43,11 +43,11 @@ export default function OnboardingComponent () {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const res = await completeOnboarding(formData)
-    mutate(user?.primaryEmailAddress?.emailAddress ?? '')
     if (res?.message) {
       // Reloads the user's data from Clerk's API
+      mutate(user?.primaryEmailAddress?.emailAddress ?? '')
       await user?.reload()     
-      router.push('/dashboard')
+      window.location.reload()
     }
     if (res?.error) {
       setError(res?.error)
