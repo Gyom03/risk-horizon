@@ -131,25 +131,44 @@ function Navbar () {
 
             <DisclosurePanel className='md:hidden'>
               <div className='space-y-1 px-2  pb-3 pt-2'>
-                {navigation.map(item => (
-                  <DisclosureButton
-                    key={item.name}
-                    as='a'
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-[#5f3494] text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'rounded-md px-3 py-2 text-base font-medium flex justify-center'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </DisclosureButton>
-                ))}
+                {navigation.map(item =>
+                  !item.private ? (
+                    <DisclosureButton
+                      key={item.name}
+                      as='a'
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? 'bg-[#5f3494] text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'rounded-md px-3 py-2 text-base font-medium flex justify-center'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </DisclosureButton>
+                  ) : user ? (
+                    <DisclosureButton
+                      key={item.name}
+                      as='a'
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? 'bg-[#5f3494] text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'rounded-md px-3 py-2 text-base font-medium flex justify-center'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </DisclosureButton>
+                  ) : null
+                )}
                 <div className='text-white w-full cursor-pointer hover:bg-gray-700 flex border-t-2 px-2 pt-1 flex-shrink-0 text-center justify-center'>
                   <SignedOut>
-                    <SignInButton>Se connecter</SignInButton>
+                    <SignInButton forceRedirectUrl={'/dashboard/'}>
+                      Se connecter
+                    </SignInButton>
                   </SignedOut>
                   <SignedIn>
                     <UserButton />
