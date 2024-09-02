@@ -4,11 +4,9 @@ import * as React from 'react'
 import { useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { completeOnboarding } from '@/app/onboarding/_actions'
-import { Button } from '@/components/ui/button'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { toast } from 'sonner'
-import { Loader2 } from 'lucide-react'
 
 export default function OnboardingComponent () {
   const [error, setError] = React.useState('')
@@ -16,10 +14,10 @@ export default function OnboardingComponent () {
   const router = useRouter()
 
   const { data, mutate, isPending } = useMutation({
-    mutationKey: ['subscribeToNewsletter'],
+    mutationKey: ['subscribe-to-newsletter'],
     mutationFn: async (email: string) => {
       const { data } = await axios.post(
-        '/api/subscribeToNewsletter',
+        '/api/subscribe-to-newsletter',
         {
           email: email
         },
@@ -32,7 +30,7 @@ export default function OnboardingComponent () {
       return data
     },
     onSuccess: () => {
-      router.push('/dashboard')
+      toast.success('Vous êtes maintenant inscrit à la newsletter')
     },
     onError: () => {
       toast.error('Une erreur est survenue')
@@ -41,13 +39,16 @@ export default function OnboardingComponent () {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const res = await completeOnboarding(formData)
+    const res = await completeOnboarding()
     if (res?.message) {
       // Reloads the user's data from Clerk's API
-      mutate(user?.primaryEmailAddress?.emailAddress ?? '')
-      await user?.reload()     
-      window.location.reload()
+      try {
+        await user?.reload()
+        mutate(user?.primaryEmailAddress?.emailAddress ?? '')
+      } catch (error) {
+        console.error(error)
+      }
+      router.push('/dashboard')
     }
     if (res?.error) {
       setError(res?.error)
@@ -79,21 +80,14 @@ export default function OnboardingComponent () {
 
         {/* Submit Button */}
         <div className='flex flex-col h-[10vh] justify-around'>
-          {/* <button
+          <button
             name='submit'
             type='submit'
             className='w-full px-4 py-2 bg-primary hover:bg-riskvariant1 text-white font-semibold rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
           >
             Soumettre
-          </button> */}
-          {isPending ? (
-            <Button disabled>
-              <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-              <span>Envoi en cours..</span>
-            </Button>
-          ) : (
-            <Button type='submit'>Soumettre</Button>
-          )}
+          </button>
+          {/* MaybeLater Button */}
           <div className='flex justify-center'>
             <button
               name='maybeLater'
