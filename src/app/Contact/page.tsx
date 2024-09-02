@@ -13,7 +13,7 @@ function Page() {
   return (
     <div className=" min-h-[calc(100dvh-7rem)]  bg-gray-100">
       <main className="flex-1 flex justify-center items-center flex-col">
-        <Form extended={true} className="w-full py-12  pt-32 bg-gray-100 dark:bg-gray-800" />
+        <Form extended={true} className="w-full py-12  pt-24 bg-gray-100 dark:bg-gray-800" />
         <Separator className="w-[80%] my-20" />
         <div className="pb-20">
           <h3 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Nous suivre sur les réseaux</h3>

@@ -63,7 +63,7 @@ export default function Component() {
   }
 
   return (
-    <div className="flex h-screen bg-background mt-16">
+    <div className="flex h-screen bg-background">
       {/* Sidebar - always visible */}
       <aside className="w-64 border-r overflow-auto !font-bold">
         <ScrollArea className="h-full w-full">

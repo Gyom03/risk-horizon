@@ -9,7 +9,7 @@ import Querywrapper from "@/utils/analytics/query-provider"
 import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.css"
-
+import { frFR } from "@clerk/localizations"
 import Script from "next/script"
 import { ClerkProvider } from "@clerk/nextjs"
 const queryClient = new QueryClient()
@@ -112,9 +112,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-   return (
-    <ClerkProvider>
-      <html lang="fr" className="scroll-smooth" suppressHydrationWarning >
+  return (
+    <ClerkProvider localization={frFR}>
+      <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
         <head>
           <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7L0NDNK9"></Script>
           <Script id="google-analytics">
