@@ -4,17 +4,50 @@ import * as React from 'react'
 import { useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { completeOnboarding } from '@/app/onboarding/_actions'
+import { Button } from '@/components/ui/button'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
+import { toast } from 'sonner'
+import { Loader2 } from 'lucide-react'
 
 export default function OnboardingComponent () {
   const [error, setError] = React.useState('')
   const { user } = useUser()
   const router = useRouter()
 
-  const handleSubmit = async (formData: FormData) => {
+  const { data, mutate, isPending, status } = useMutation({
+    mutationKey: ['subscribeToNewsletter'],
+    mutationFn: async (email: string) => {
+      const { data } = await axios.post(
+        '/api/subscribeToNewsletter',
+        {
+          email: email
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      )
+      return data
+    },
+    onSuccess: () => {
+      router.push('/dashboard')
+    },
+    onError: () => {
+      toast.error('Une erreur est survenue')
+    }
+  })
+
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async event => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
     const res = await completeOnboarding(formData)
+    console.log(res.message)
+    mutate(user?.primaryEmailAddress?.emailAddress ?? '')
     if (res?.message) {
       // Reloads the user's data from Clerk's API
-      await user?.reload()
+      await user?.reload()     
       router.push('/dashboard')
     }
     if (res?.error) {
@@ -27,32 +60,41 @@ export default function OnboardingComponent () {
         (à modifier) Voulez-vous vous inscrire à la newsletter pour rester
         informer{' '}
       </h2>
-      <form className='space-y-6' action={() => handleSubmit}>
+      <form className='space-y-6' onSubmit={handleSubmit}>
         {/* Address */}
         <div>
           <label
-            htmlFor='address'
+            htmlFor='email'
             className=' block text-sm font-medium text-gray-700'
           >
             Address email
           </label>
           <input
-            name='address'
+            name='email'
+            required
             disabled
-            value={user?.primaryEmailAddress?.emailAddress ?? ''}
+            defaultValue={user?.primaryEmailAddress?.emailAddress ?? ''}
             className='cursor-not-allowed mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary'
           />
         </div>
 
         {/* Submit Button */}
         <div className='flex flex-col h-[10vh] justify-around'>
-          <button
+          {/* <button
             name='submit'
             type='submit'
             className='w-full px-4 py-2 bg-primary hover:bg-riskvariant1 text-white font-semibold rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
           >
             Soumettre
-          </button>
+          </button> */}
+          {isPending ? (
+            <Button disabled>
+              <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+              <span>Envoi en cours..</span>
+            </Button>
+          ) : (
+            <Button type='submit'>Soumettre</Button>
+          )}
           <div className='flex justify-center'>
             <button
               name='maybeLater'

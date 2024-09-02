@@ -12,6 +12,6 @@ datasource db {
 model User {
   id           Int           @id @default(autoincrement())
   email        String        @unique
-  isSubscribed Boolean       
+  isSubscribed Boolean       @default(true)
   dateCreated  DateTime      @default(now())
 }

@@ -1,6 +1,6 @@
 'use server'
 
-import { auth, clerkClient } from '@clerk/nextjs/server'
+import { auth, clerkClient} from '@clerk/nextjs/server'
 
 export const completeOnboarding = async (formData: FormData) => {
   const { userId } = auth()
@@ -13,19 +13,11 @@ export const completeOnboarding = async (formData: FormData) => {
     const res = await clerkClient().users.updateUser(userId, {
       publicMetadata: {
         onboardingComplete: true,
-        formData: { 
-        auth: {
-          userId: userId,
-          sessionClaims: auth().sessionClaims,
-          redirectToSignIn: auth().redirectToSignIn
-        },
-        formData: formData
- }
+        email: formData.get('email'),
       }
       // privateMetadata: { ...formData},
     })
-    console.log(res.publicMetadata)
-    return { publicMetadata: res.publicMetadata }
+    return { message: res.publicMetadata }
   } catch (err) {
     return { error: 'There was an error updating the user metadata.' }
   }
