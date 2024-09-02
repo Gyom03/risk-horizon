@@ -9,8 +9,9 @@ import Querywrapper from "@/utils/analytics/query-provider"
 import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.css"
-
+import { frFR } from "@clerk/localizations"
 import Script from "next/script"
+import { ClerkProvider } from "@clerk/nextjs"
 const queryClient = new QueryClient()
 
 const inter = Inter({ subsets: ["latin"] })
@@ -112,29 +113,31 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7L0NDNK9"></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
+    <ClerkProvider localization={frFR}>
+      <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
+        <head>
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7L0NDNK9"></Script>
+          <Script id="google-analytics">
+            {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-4K7L0NDNK9');`}
-        </Script>
-      </head>
-      {/* <CSPostHogProvider> */}
-      <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
-      <body>
-        <Toaster richColors />
-        <Querywrapper>
-          <GoogleCaptchaWrapper>
-            <Navbar />
-            {children}
-            <Footer />
-          </GoogleCaptchaWrapper>
-        </Querywrapper>
-        <Analytics />
-      </body>
-    </html>
+          </Script>
+        </head>
+        {/* <CSPostHogProvider> */}
+        <link rel="canonical" href="https://risk-horizon.be/" key="canonical" />
+        <body>
+          <Toaster richColors />
+          <Querywrapper>
+            <GoogleCaptchaWrapper>
+              <Navbar />
+              {children}
+              <Footer />
+            </GoogleCaptchaWrapper>
+          </Querywrapper>
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

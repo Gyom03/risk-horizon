@@ -1,18 +1,22 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from "@headlessui/react"
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import { useEffect, useMemo } from "react"
-
+import { SignedOut, SignInButton, SignedIn, UserButton, useUser } from "@clerk/nextjs"
+import Link from "next/link"
+import { Button } from "./ui/button"
+import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
+import { Menu } from "lucide-react"
 const navigation = [
-  { name: "Accueil", href: "/", current: false },
-  { name: "Mission", href: "/Missions", current: false },
-  { name: "À propos", href: "/about", current: false },
-  { name: "Contact", href: "/Contact", current: false },
-  { name: "OSI 2024", href: "/OSI", current: false },
+  { name: "Accueil", href: "/", current: false, private: false },
+  { name: "Mission", href: "/Missions", current: false, private: false },
+  { name: "À propos", href: "/about", current: false, private: false },
+  { name: "Contact", href: "/Contact", current: false, private: false },
+  { name: "OSI 2024", href: "/OSI", current: false, private: false },
+  { name: "Dashboard", href: "/dashboard", current: false, private: true },
 ]
 
 function classNames(...classes: string[]) {
@@ -22,101 +26,92 @@ function classNames(...classes: string[]) {
 function Navbar() {
   const router = useRouter()
 
-  useEffect(() => {
-    navigation.map((item) => {
-      if (window.location.pathname === item.href) {
-        item.current = true
-      } else {
-        item.current = false
-      }
-    })
-  }, [])
+  const [isOpen, setIsOpen] = useState(false)
+
+  const navItems = [
+    { name: "Accueil", href: "/", current: false, private: false },
+    { name: "À propos", href: "/about", current: false, private: false },
+    { name: "Contact", href: "/Contact", current: false, private: false },
+    { name: "OSI 2024", href: "/OSI", current: false, private: false },
+  ]
+
   const path = usePathname()
   if (path === "/hacked") return null
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
-    <div className=" bg-riskbg  ">
-      <Disclosure as="nav" className="bg-[#040437]  absolute top-0 w-full z-1">
-        {({ open }: { open: boolean }) => (
-          <>
-            <div className=" ">
-              <div className="relative flex h-16 items-center justify-between">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  {/* Mobile menu button*/}
-                  <DisclosureButton className="m-2 absolute inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-[#040437]hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span className="absolute -inset-0.5" />
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </DisclosureButton>
-                </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div className="flex items-center">
-                    <Image
-                      alt="Risk Horizon logo"
-                      src="/logo_line_white.png"
-                      width="250"
-                      height="150"
-                      className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-6 md:ml-5 h-auto cursor-pointer"
-                      onClick={() => router.push("/")}
-                    />
-                  </div>
-                  <div className="hidden w-full w-min-[90px] relative right-3 sm:ml-6 sm:block mr-4">
-                    <div className="flex flex-shrink-1 w-full ml-4 justify-end items-center ">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            item.current ? "bg-[#5f3494] text-white" : "text-white hover:bg-gray-700 hover:text-white",
-                            "rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+    <nav className="bg-riskbg h-16">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <Image
+              alt="Risk Horizon logo"
+              src="/logo_line_white.png"
+              width="280"
+              height="180"
+              className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-6 md:ml-5 h-auto cursor-pointer"
+              onClick={() => router.push("/")}
+            />
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="translate-y-[6px]">
+                {/* SignedOut match to user disconnected */}
+                <SignedOut>
+                  <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
+                </SignedOut>
+                {/* SignIn match to user connected */}
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
               </div>
             </div>
-
-            <DisclosurePanel className="md:hidden">
-              <div className="space-y-1 px-2  pb-3 pt-2">
-                {navigation.map((item) => (
-                  <DisclosureButton
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current ? "bg-[#5f3494] text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-base font-medium flex justify-center"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </DisclosureButton>
-                ))}
-              </div>
-            </DisclosurePanel>
-          </>
-        )}
-      </Disclosure>
-      {/* <nav className="w-full ">
-        <NavbarContent className=" hidden md:flex md:ml-auto  justify-end gap-4 sm:gap-6 flex-col md:flex-row mt-6 md:mt-0 items-center md:items-start mb-4 md:mb-0" />
-
-        <NavbarContent
-          className={
-            classname +
-            "   md:hidden md:ml-auto  justify-end gap-4 sm:gap-6 flex-col md:flex-row mt-6 md:mt-0 items-center md:items-start mb-4 md:mb-0"
-          }
-        />
-      </nav> */}
-    </div>
+          </div>
+          <div className="md:hidden flex items-center">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-riskbg">
+                <div className="flex flex-col space-y-4 mt-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="scale-150 translate-x-24  mt-14">
+                    {/* SignedOut match to user disconnected */}
+                    <SignedOut>
+                      <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
+                    </SignedOut>
+                    {/* SignIn match to user connected */}
+                    <SignedIn>
+                      <UserButton />
+                    </SignedIn>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </nav>
   )
 }
 
