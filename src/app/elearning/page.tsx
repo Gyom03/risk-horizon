@@ -1,11 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { ComponentType, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { ChevronRight } from "lucide-react"
-
+import dynamic from "next/dynamic"
+import Landing from "./courses/landing"
+import Phishing from "./courses/phishing"
 // Mock data for categories and nested courses
 const categories = [
   {
@@ -13,7 +15,7 @@ const categories = [
     subcategories: [
       {
         name: "Frontend",
-        courses: ["HTML & CSS Basics", "JavaScript Fundamentals", "React for Beginners"],
+        courses: ["Phishing", "JavaScript Fundamentals", "React for Beginners"],
       },
       {
         name: "Backend",
@@ -50,7 +52,7 @@ const categories = [
 ]
 
 export default function Component() {
-  const [selectedCourse, setSelectedCourse] = useState<string | null>(null)
+  const [selectedCourse, setSelectedCourse] = useState<string>("landing")
   const [openCategories, setOpenCategories] = useState<{ [key: string]: boolean }>({})
   const [openSubcategories, setOpenSubcategories] = useState<{ [key: string]: boolean }>({})
 
@@ -62,10 +64,26 @@ export default function Component() {
     setOpenSubcategories((prev) => ({ ...prev, [subcategoryName]: !prev[subcategoryName] }))
   }
 
+  const courseComponents = {
+    Phishing: Phishing,
+    landing: Landing,
+  }
+
+  const renderCourseContent = () => {
+    if (!selectedCourse) return null
+    const CourseComponent = courseComponents[selectedCourse as keyof typeof courseComponents]
+    return CourseComponent ? (
+      <CourseComponent />
+    ) : (
+      <div>
+        <p className="mt-4">Course content is not available.</p>
+      </div>
+    )
+  }
+
   return (
-    <div className="flex h-screen bg-background">
-      {/* Sidebar - always visible */}
-      <aside className="w-64 border-r overflow-auto !font-bold">
+    <div className="flex h-screen bg-background mt-16">
+      <aside className="w-64 border-r overflow-auto">
         <ScrollArea className="h-full w-full">
           {categories.map((category, index) => (
             <Collapsible
@@ -76,7 +94,7 @@ export default function Component() {
             >
               <CollapsibleTrigger asChild>
                 <Button variant="ghost" className="flex w-full items-center justify-between p-4 font-medium">
-                  <span className="text-left truncate mr-2 font-bold">{category.name}</span>
+                  <span className="text-left truncate mr-2  font-bold">{category.name}</span>
                   <ChevronRight
                     className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
                       openCategories[category.name] ? "rotate-90" : ""
@@ -111,10 +129,14 @@ export default function Component() {
                           <li key={courseIndex}>
                             <Button
                               variant="ghost"
-                              className="w-full justify-start text-sm p-2 pl-8"
+                              className={`w-full justify-start text-sm p-2 pl-10 ${
+                                selectedCourse === course ? " underline  " : ""
+                              }`}
                               onClick={() => setSelectedCourse(course)}
                             >
-                              <span className="truncate">{course}</span>
+                              <span className="truncate">
+                                <strong>•&nbsp;</strong> {course}
+                              </span>
                             </Button>
                           </li>
                         ))}
@@ -128,18 +150,14 @@ export default function Component() {
         </ScrollArea>
       </aside>
 
-      {/* Main content area */}
       <main className="flex-1 overflow-auto p-6">
         {selectedCourse ? (
-          <>
-            <h1 className="text-2xl font-bold">{selectedCourse}</h1>
-            <p className="mt-4">Course content for {selectedCourse} goes here.</p>
-          </>
+          renderCourseContent()
         ) : (
-          <>
+          <div>
             <h1 className="text-2xl font-bold">Welcome to Your E-Learning Platform</h1>
             <p className="mt-4">Select a course from the sidebar to begin learning.</p>
-          </>
+          </div>
         )}
       </main>
     </div>
