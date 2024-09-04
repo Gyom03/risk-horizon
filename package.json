@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@clerk/localizations": "^2.7.1",
-    "@clerk/nextjs": "^5.3.3",
+    "@clerk/nextjs": "^5.4.1",
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
     "@prisma/client": "^5.19.0",
