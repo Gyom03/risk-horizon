@@ -29,7 +29,7 @@ function classNames (...classes: string[]) {
 
 function Navbar () {
   const router = useRouter()
-
+  const path = usePathname()
   // Get user from clerk
   const { user } = useUser()
 
@@ -38,16 +38,15 @@ function Navbar () {
   // Display bg of button when user is on the page
   useEffect(() => {
     navigation.map(item => {
-      if (window.location.pathname === item.href) {
+      if (path === item.href) {
         setIsOpen(false)
         item.current = true
       } else {
         item.current = false
       }
     })
-  }, [])
+  }, [path])
 
-  const path = usePathname()
   if (path === '/hacked') return null
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
@@ -64,6 +63,8 @@ function Navbar () {
               onClick={() => router.push('/')}
             />
           </div>
+
+          {/* ---------------------------------------------Desktop menu--------------------------------------------- */}
           <div className='hidden md:block'>
             <div className='ml-10 flex items-center space-x-4'>
               {/* {navItems.map(item => (
@@ -129,6 +130,8 @@ function Navbar () {
               </div>
             </div>
           </div>
+
+          {/* ------------------------Mobile menu-------------------------------------------------------- */}
           <div className='md:hidden flex items-center'>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -166,6 +169,7 @@ function Navbar () {
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-base font-medium flex justify-center'
                         )}
+                        onClick={() => setIsOpen(false)}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
@@ -173,7 +177,6 @@ function Navbar () {
                     ) : user ? (
                       <Link
                         key={item.name}
-                        as='a'
                         href={item.href}
                         className={classNames(
                           item.current
@@ -182,12 +185,13 @@ function Navbar () {
                           'rounded-md px-3 py-2 text-base font-medium flex justify-center'
                         )}
                         aria-current={item.current ? 'page' : undefined}
+                        onClick={() => setIsOpen(false)}
                       >
                         {item.name}
                       </Link>
                     ) : null
                   )}
-                  <div className='text-white w-full cursor-pointer hover:bg-gray-700 flex border-t-2 px-2 pt-1 flex-shrink-0 text-center justify-center'>
+                  <div className='text-white w-full cursor-pointer hover:bg-gray-700 flex border-t-2 px-2 pt-1 text-center justify-center'>
                     <SignedOut>
                       <SignInButton forceRedirectUrl={'/dashboard/'}>
                         Se connecter

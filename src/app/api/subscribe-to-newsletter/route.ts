@@ -1,6 +1,6 @@
 "use server"
 
-import { db } from "@/lib/db"
+import { db } from "@/utils/db"
 
 export async function POST(request: Request, response: Response) {
   const data = await request.json()
