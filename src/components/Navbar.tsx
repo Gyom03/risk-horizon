@@ -8,7 +8,8 @@ import {
   SignInButton,
   SignedIn,
   UserButton,
-  useUser
+  useUser,
+  SignOutButton
 } from '@clerk/nextjs'
 import Link from 'next/link'
 import { Button } from './ui/button'
@@ -198,7 +199,7 @@ function Navbar () {
                       </SignInButton>
                     </SignedOut>
                     <SignedIn>
-                      <UserButton />
+                      <SignOutButton>Déconnexion</SignOutButton>
                     </SignedIn>
                   </div>
                 </div>
