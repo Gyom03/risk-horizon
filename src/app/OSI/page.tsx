@@ -181,25 +181,25 @@ function Page() {
               Nos partenaires :
             </p>
             <div className="flex flex-wrap  justify-center items-center gap-0 md:gap-14">
-              <div className="mx-10 md:mx-0 w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center ">
                 <Link href={"https://www.zebrathrust.be/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover"
+                    className="object-cover hover:scale-110 duration-500"
                     height={400}
                     src="/imgs/osi/logo/zebra2.png"
                     width={400}
                   />
                 </Link>
               </div>
-              <div className="hidden mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square  justify-center items-center">
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://www.bhc.be/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover "
+                    className="object-cover hover:scale-110 duration-500"
                     height={160}
                     src="/imgs/osi/logo/bhc_BLANC.png"
-                    width={300}
+                    width={200}
                   />
                 </Link>
               </div>
@@ -207,7 +207,7 @@ function Page() {
                 <Link href={"https://ict.evergroup.be/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover"
+                    className="object-cover hover:scale-110 duration-500"
                     height={200}
                     src="/imgs/osi/logo/Evergroup.png"
                     width={200}
@@ -218,7 +218,7 @@ function Page() {
                 <Link href={"https://exegol.readthedocs.io/en/latest/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover scale-[0.9] md:scale-[1]"
+                    className="object-cover hover:scale-110 duration-500 scale-[0.9] md:scale-[1]"
                     height={300}
                     src="/imgs/osi/logo/exegol.png"
                     width={300}
@@ -229,7 +229,7 @@ function Page() {
                 <Link href={"https://kaisenlinux.org/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover scale-[1.1] md:scale-[1]"
+                    className="object-cover hover:scale-110 duration-500 scale-[1.1] md:scale-[1]"
                     height={300}
                     src="/imgs/osi/logo/kaisen.png"
                     width={300}
@@ -242,7 +242,7 @@ function Page() {
                 <Link href={"https://easi.net/fr"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover "
+                    className="object-cover hover:scale-110 duration-500 "
                     height={160}
                     src="/imgs/osi/logo/easi.png"
                     width={300}
@@ -253,7 +253,7 @@ function Page() {
                 <Link href={"https://kasfaleia.com"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover "
+                    className="object-cover hover:scale-110 duration-500 "
                     height={160}
                     src="/imgs/osi/logo/kasfaleia.png"
                     width={300}
@@ -264,7 +264,7 @@ function Page() {
                 <Link href={"https://akcustom.be"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover "
+                    className="object-cover hover:scale-110 duration-500 "
                     height={160}
                     src="/imgs/osi/logo/akcustom.webp"
                     width={300}
@@ -275,10 +275,21 @@ function Page() {
                 <Link href={"https://chimay.com/"}>
                   <Image
                     alt="Image 1"
-                    className="object-cover "
+                    className="object-cover hover:scale-110 duration-500 "
                     height={150}
                     src="/imgs/osi/logo/chimay.png"
                     width={150}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://jeci.fr/fr/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover hover:scale-110 duration-500 "
+                    height={200}
+                    src="/imgs/osi/logo/jeci.png"
+                    width={200}
                   />
                 </Link>
               </div>
