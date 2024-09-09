@@ -293,6 +293,17 @@ function Page() {
                   />
                 </Link>
               </div>
+              <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://intuitem.com/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover hover:scale-110 duration-500 "
+                    height={150}
+                    src="/imgs/osi/logo/intuitem.png"
+                    width={150}
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
