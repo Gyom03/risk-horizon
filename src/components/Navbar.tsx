@@ -63,12 +63,13 @@ function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <div className="translate-y-[6px]">
-                {/* SignedOut match to user disconnected */}
+              <div
+                className=" text-white !underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                id="underlinepls"
+              >
                 <SignedOut>
                   <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                 </SignedOut>
-                {/* SignIn match to user connected */}
                 <SignedIn>
                   <UserButton />
                 </SignedIn>
@@ -95,12 +96,10 @@ function Navbar() {
                       {item.name}
                     </Link>
                   ))}
-                  <div className="scale-150 translate-x-24  mt-14">
-                    {/* SignedOut match to user disconnected */}
+                  <div className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium">
                     <SignedOut>
                       <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                     </SignedOut>
-                    {/* SignIn match to user connected */}
                     <SignedIn>
                       <UserButton />
                     </SignedIn>
