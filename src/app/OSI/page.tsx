@@ -3,7 +3,7 @@ import Content from "./content"
 export const metadata: Metadata = {
   title: "Open Source Immersion - Risk Horizon ASBL",
   description:
-    "Le salon Open Source Immersion (OSI) est un événement organisé par Risk Horizon ASBL pour promouvoir les logiciels libres et open source.",
+    "Le salon Open Source Immersion (OSI) est un événement organisé le 19 octobre par Risk Horizon ASBL pour promouvoir les logiciels libres et open source.",
   authors: [
     { name: "Risk Horizon" },
     { name: "Maxime Curon" },
