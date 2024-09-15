@@ -150,7 +150,7 @@ function Content() {
               Nos partenaires majeurs :
             </p>
             <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
-              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center hover:scale-110 duration-500 scale-[1.1] md:scale-[1]">
                 <Link href={"https://www.heh.be/"}>
                   <Image
                     alt="Image"
@@ -162,11 +162,11 @@ function Content() {
                 </Link>
               </div>
 
-              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center">
+              <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center hover:scale-110 duration-500 scale-[1.1] md:scale-[1]">
                 <Link href={"https://www.nrj.be/"}>
                   <Image
                     alt="Image 1"
-                    className="object-contain  aspect-video md:aspect-square scale-[0.9] md:scale-[0.65]"
+                    className="object-contain  aspect-video md:aspect-square scale-[0.9] md:scale-[0.65] "
                     height={300}
                     src="/imgs/osi/logo/NRJ.png"
                     width={300}
@@ -222,17 +222,6 @@ function Content() {
                     className="object-cover hover:scale-110 duration-500 scale-[0.9] md:scale-[1]"
                     height={300}
                     src="/imgs/osi/logo/exegol.png"
-                    width={300}
-                  />
-                </Link>
-              </div>
-              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
-                <Link href={"https://kaisenlinux.org/"}>
-                  <Image
-                    alt="Image 1"
-                    className="object-cover hover:scale-110 duration-500 scale-[1.1] md:scale-[1]"
-                    height={300}
-                    src="/imgs/osi/logo/kaisen.png"
                     width={300}
                   />
                 </Link>
@@ -294,6 +283,19 @@ function Content() {
                   />
                 </Link>
               </div>
+            </div>
+            <div className="flex flex-wrap  justify-center items-center gap-0 md:gap-14">
+              <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://www.beezim.fr/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover hover:scale-110 duration-500 "
+                    height={150}
+                    src="/imgs/osi/logo/beezim.png"
+                    width={170}
+                  />
+                </Link>
+              </div>
               <div className="mx-10 md:mx-0 w-[150px] md:w-[200px] aspect-video md:aspect-square flex justify-center items-center">
                 <Link href={"https://intuitem.com/"}>
                   <Image
@@ -302,6 +304,17 @@ function Content() {
                     height={150}
                     src="/imgs/osi/logo/intuitem.png"
                     width={150}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://kaisenlinux.org/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover hover:scale-110 duration-500 scale-[1.1] md:scale-[1]"
+                    height={300}
+                    src="/imgs/osi/logo/kaisen.png"
+                    width={300}
                   />
                 </Link>
               </div>
