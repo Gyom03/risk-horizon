@@ -85,7 +85,7 @@ export default function Component() {
   }
 
   return (
-    <div className="flex h-screen bg-background mt-16">
+    <div className="flex h-screen bg-background ">
       <div className="flex h-screen bg-background">
         <aside className="w-64 border-r overflow-auto">
           <ScrollArea className="h-full w-full">
