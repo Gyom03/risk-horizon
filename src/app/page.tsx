@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import Form from "@/components/form"
+import Form from "@/components/forms/form"
 export default function Component() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-riskbg">
