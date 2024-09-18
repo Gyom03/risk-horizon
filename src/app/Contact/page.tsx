@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import { Facebook, MailboxIcon } from "lucide-react"
 
-import Form from "@/components/form"
+import Form from "@/components/forms/form"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 

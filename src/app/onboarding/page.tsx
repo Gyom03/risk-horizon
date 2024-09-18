@@ -48,7 +48,7 @@ export default function OnboardingComponent () {
       } catch (error) {
         console.error(error)
       }
-      router.push('/dashboard')
+      router.push('/dashboard/')
     }
     if (res?.error) {
       setError(res?.error)
