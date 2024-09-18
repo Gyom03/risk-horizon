@@ -2,26 +2,25 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from "@headlessui/react"
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Transition,
+} from "@headlessui/react"
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import { useEffect, useMemo } from "react"
-import { SignedOut, SignInButton, SignedIn, UserButton, useUser } from "@clerk/nextjs"
+import {
+  SignedOut,
+  SignInButton,
+  SignedIn,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
 import { Menu } from "lucide-react"
-const navigation = [
-  { name: "Accueil", href: "/", current: false, private: false },
-  { name: "Mission", href: "/Missions", current: false, private: false },
-  { name: "À propos", href: "/about", current: false, private: false },
-  { name: "Contact", href: "/Contact", current: false, private: false },
-  { name: "OSI 2024", href: "/OSI", current: false, private: false },
-  { name: "Dashboard", href: "/dashboard", current: false, private: true },
-]
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ")
-}
 
 function Navbar() {
   const router = useRouter()
@@ -29,10 +28,11 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { name: "Accueil", href: "/", current: false, private: false },
-    { name: "À propos", href: "/about", current: false, private: false },
-    { name: "Contact", href: "/Contact", current: false, private: false },
-    { name: "OSI 2024", href: "/OSI", current: false, private: false },
+    { name: "Accueil", href: "/" },
+    { name: "À propos", href: "/about" },
+    { name: "Contact", href: "/Contact" },
+    { name: "OSI 2024", href: "/OSI" },
+    { name: "Dashboard", href: "/dashboard" },
   ]
 
   const path = usePathname()
@@ -58,7 +58,11 @@ function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                  className={
+                    path === item.href
+                      ? "text-white !underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                      : "text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                  }
                 >
                   {item.name}
                 </Link>
@@ -68,7 +72,9 @@ function Navbar() {
                 id="underlinepls"
               >
                 <SignedOut>
-                  <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
+                  <SignInButton forceRedirectUrl={"/dashboard/"}>
+                    Se connecter
+                  </SignInButton>
                 </SignedOut>
                 <SignedIn>
                   <UserButton />
@@ -98,7 +104,9 @@ function Navbar() {
                   ))}
                   <div className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium">
                     <SignedOut>
-                      <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
+                      <SignInButton forceRedirectUrl={"/dashboard/"}>
+                        Se connecter
+                      </SignInButton>
                     </SignedOut>
                     <SignedIn>
                       <UserButton />
