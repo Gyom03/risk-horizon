@@ -1,205 +1,107 @@
-'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useMemo } from 'react'
-import {
-  SignedOut,
-  SignInButton,
-  SignedIn,
-  UserButton,
-  useUser,
-  SignOutButton
-} from '@clerk/nextjs'
-import Link from 'next/link'
-import { Button } from './ui/button'
-import { Sheet, SheetTrigger, SheetContent } from './ui/sheet'
-import { Menu } from 'lucide-react'
-
+"use client"
+import React, { useState } from "react"
+import Image from "next/image"
+import { usePathname, useRouter } from "next/navigation"
+import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from "@headlessui/react"
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
+import { useEffect, useMemo } from "react"
+import { SignedOut, SignInButton, SignedIn, UserButton, useUser } from "@clerk/nextjs"
+import Link from "next/link"
+import { Button } from "./ui/button"
+import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
+import { Menu } from "lucide-react"
 const navigation = [
-  { name: 'Accueil', href: '/', current: false, private: false },
-  { name: 'À propos', href: '/about', current: false, private: false },
-  { name: 'Contact', href: '/Contact', current: false, private: false },
-  { name: 'OSI 2024', href: '/OSI', current: false, private: false },
-  { name: 'Dashboard', href: '/dashboard', current: false, private: true }
+  { name: "Accueil", href: "/", current: false, private: false },
+  { name: "Mission", href: "/Missions", current: false, private: false },
+  { name: "À propos", href: "/about", current: false, private: false },
+  { name: "Contact", href: "/Contact", current: false, private: false },
+  { name: "OSI 2024", href: "/OSI", current: false, private: false },
+  { name: "Dashboard", href: "/dashboard", current: false, private: true },
 ]
 
-function classNames (...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ")
 }
 
-function Navbar () {
+function Navbar() {
   const router = useRouter()
-  const path = usePathname()
-  // Get user from clerk
-  const { user } = useUser()
 
   const [isOpen, setIsOpen] = useState(false)
 
-  // Display bg of button when user is on the page
-  useEffect(() => {
-    navigation.map(item => {
-      if (path === item.href) {
-        setIsOpen(false)
-        item.current = true
-      } else {
-        item.current = false
-      }
-    })
-  }, [path])
+  const navItems = [
+    { name: "Accueil", href: "/", current: false, private: false },
+    { name: "À propos", href: "/about", current: false, private: false },
+    { name: "Contact", href: "/Contact", current: false, private: false },
+    { name: "OSI 2024", href: "/OSI", current: false, private: false },
+  ]
 
-  if (path === '/hacked') return null
+  const path = usePathname()
+  if (path === "/hacked") return null
   // const classname = isMenuOpen ? "flex" : "hidden"
   return (
-    <nav className='bg-riskbg h-16'>
-      <div className=' mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
-          <div className='flex-shrink-0'>
+    <nav className="bg-riskbg h-16">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
             <Image
-              alt='Risk Horizon logo'
-              src='/logo_line_white.png'
-              width='250'
-              height='150'
-              className=' lg:w-[30vw]!important md:w-[15vw]!important h-auto cursor-pointer'
-              onClick={() => router.push('/')}
+              alt="Risk Horizon logo"
+              src="/logo_line_white.png"
+              width="280"
+              height="180"
+              className="mr-5 lg:w-[30vw]!important md:w-[15vw]!important ml-6 md:ml-5 h-auto cursor-pointer"
+              onClick={() => router.push("/")}
             />
           </div>
-
-          {/* ---------------------------------------------Desktop menu--------------------------------------------- */}
-          <div className='hidden md:block'>
-            <div className='ml-10 flex items-center space-x-4'>
-              {/* {navItems.map(item => (
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={classNames(
-                    item.current
-                      ? 'bg-[#5f3494] text-white'
-                      : 'text-white hover:bg-gray-700 hover:text-white',
-                    'rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
+                  className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
                 >
                   {item.name}
                 </Link>
-              ))} */}
-
-              {navigation.map(item =>
-                // Verify if displayed for all users
-                !item.private ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-[#5f3494] text-white'
-                        : 'text-white hover:bg-gray-700 hover:text-white',
-                      'rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
-                    {item.name}
-                    {/* {!item.private ? (item.name):(user ? item.name : '')} */}
-                  </a>
-                ) : user ? (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-[#5f3494] text-white'
-                        : 'text-white hover:bg-gray-700 hover:text-white',
-                      'rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </Link>
-                ) : null
-              )}
-              <div className='text-white w-max cursor-pointer rounded-md p-2 hover:bg-gray-700 flex border-2 items-center'>
-                {/* SignedOut match to user disconnected */}
+              ))}
+              <div
+                className=" text-white !underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                id="underlinepls"
+              >
                 <SignedOut>
-                  <SignInButton forceRedirectUrl={'/dashboard/'}>
-                    Se connecter
-                  </SignInButton>
+                  <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                 </SignedOut>
-                {/* SignIn match to user connected */}
                 <SignedIn>
                   <UserButton />
                 </SignedIn>
               </div>
             </div>
           </div>
-
-          {/* ------------------------Mobile menu-------------------------------------------------------- */}
-          <div className='md:hidden flex items-center'>
+          <div className="md:hidden flex items-center">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant='outline' size='icon' className='md:hidden'>
-                  <Menu className='h-6 w-6' />
-                  <span className='sr-only'>Open menu</span>
+                <Button variant="outline" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side='right' className='bg-riskbg'>
-                <div className='flex flex-col space-y-4 mt-4'>
-                  {/* {navItems.map(item => (
+              <SheetContent side="right" className="bg-riskbg">
+                <div className="flex flex-col space-y-4 mt-4">
+                  {navItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={classNames(
-                        item.current
-                          ? 'bg-[#5f3494] text-white'
-                          : 'text-white hover:bg-gray-700 hover:text-white',
-                        'rounded-sm px-3 mr-1 py-2 text-[18px] text-nowrap font-medium'
-                      )}
+                      className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
                       onClick={() => setIsOpen(false)}
-                      aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
                     </Link>
-                  ))} */}
-                  {navigation.map(item =>
-                    !item.private ? (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-[#5f3494] text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-base font-medium flex justify-center'
-                        )}
-                        onClick={() => setIsOpen(false)}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </Link>
-                    ) : user ? (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-[#5f3494] text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-base font-medium flex justify-center'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ) : null
-                  )}
-                  <div className='text-white w-full cursor-pointer hover:bg-gray-700 flex border-t-2 px-2 pt-1 text-center justify-center'>
+                  ))}
+                  <div className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium">
                     <SignedOut>
-                      <SignInButton forceRedirectUrl={'/dashboard/'}>
-                        Se connecter
-                      </SignInButton>
+                      <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                     </SignedOut>
                     <SignedIn>
-                      <SignOutButton>Déconnexion</SignOutButton>
+                      <UserButton />
                     </SignedIn>
                   </div>
                 </div>
