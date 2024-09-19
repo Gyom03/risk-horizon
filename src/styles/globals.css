@@ -104,3 +104,22 @@ h6 {
 .grecaptcha-badge {
   visibility: hidden !important;
 }
+
+
+@layer utilities {
+  .underline-offset-4 {
+    text-underline-offset: 4px;
+  }
+
+.underline-offset-6 {
+    text-underline-offset: 6px;
+  }
+
+.underline-offset-8 {
+    text-underline-offset: 8px;
+  }
+
+.underline-offset-10 {
+    text-underline-offset: 10px;
+  }
+}

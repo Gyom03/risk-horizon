@@ -2,8 +2,8 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { NextRequest, NextResponse } from 'next/server'
 
 const isOnboardingRoute = createRouteMatcher(['/onboarding'])
-const isPublicRoute = createRouteMatcher(['/', '/about', '/Contact', '/OSI', '/Missions'])
-const isPrivateRoute = createRouteMatcher(['/dashboard(/.*)'])
+const isPublicRoute = createRouteMatcher(['/', '/about', '/Contact', '/OSI'])
+const isPrivateRoute = createRouteMatcher(['/dashboard(/.*)', '/elarning(/.*)'])
 
 export default clerkMiddleware((auth: any, req: NextRequest) => {
 

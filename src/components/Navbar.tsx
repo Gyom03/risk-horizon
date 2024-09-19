@@ -3,14 +3,6 @@ import React, { useState } from "react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Transition,
-} from "@headlessui/react"
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
-import { useEffect, useMemo } from "react"
-import {
   SignedOut,
   SignInButton,
   SignedIn,
@@ -23,7 +15,8 @@ import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
 import { Menu } from "lucide-react"
 
 function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
+  const { isLoaded, isSignedIn } = useUser();
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -32,12 +25,13 @@ function Navbar() {
     { name: "À propos", href: "/about" },
     { name: "Contact", href: "/Contact" },
     { name: "OSI 2024", href: "/OSI" },
-    { name: "Dashboard", href: "/dashboard" },
+    { name: "(Dashboard)", href: "/dashboard" },
   ]
 
   const path = usePathname()
   if (path === "/hacked") return null
-  // const classname = isMenuOpen ? "flex" : "hidden"
+  if (!isLoaded) return null;
+
   return (
     <nav className="bg-riskbg h-16">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,15 +54,15 @@ function Navbar() {
                   href={item.href}
                   className={
                     path === item.href
-                      ? "text-white !underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
-                      : "text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                      ? "text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                      : "text-white hover:underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
                   }
                 >
                   {item.name}
                 </Link>
               ))}
               <div
-                className=" text-white !underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                className=" text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
                 id="underlinepls"
               >
                 <SignedOut>
