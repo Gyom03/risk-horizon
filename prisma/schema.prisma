@@ -7,11 +7,54 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model User {
-  id           Int           @id @default(autoincrement())
-  email        String        @unique
-  isSubscribed Boolean       @default(true)
-  dateCreated  DateTime      @default(now())
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  isPremium    Boolean  @default(false)  
+  dateCreated  DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
+
+model NewsletterUser {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  isPaid       Boolean  @default(false)
+  isSubscribed Boolean  @default(true)
+  dateCreated  DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// model User {
+//   id           String         @id @default(uuid())
+//   email        String         @unique
+//   password     String
+//   name         String?
+//   createdAt    DateTime       @default(now())
+//   isSubscribed Boolean        @default(false) // Pour vérifier si l'utilisateur a une souscription active
+//   subscription Subscription[] // Lien vers les abonnements
+// }
+
+// model Subscription {
+//   id        Int                @id @default(autoincrement())
+//   // L'email référence l'utilisateur, qu'il soit inscrit sur le site ou non
+//   // Si la relation est définie, c'est que l'utilisateur est inscrit sur le site
+//   email     String             
+//   createdAt DateTime           @default(now())
+//   updatedAt DateTime           @updatedAt
+//   user      User?              @relation(fields: [email], references: [email])
+//   type      SubscriptionType    // Gratuite ou Payante
+//   status    SubscriptionStatus // Actif, En attente, Annulé
+// }
+
+// enum SubscriptionType {
+//   FREE
+//   PAID
+// }
+
+// enum SubscriptionStatus {
+//   ACTIVE
+//   PENDING
+//   CANCELLED
+// }
