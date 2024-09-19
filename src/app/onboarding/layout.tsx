@@ -6,9 +6,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  /* if (auth().userId) {
-    redirect("/dashboard/")
-  } */
+  if (auth().sessionClaims?.metadata.onboardingComplete === true) {
+    redirect("/")
+  }
 
   return <>{children}</>
 }
