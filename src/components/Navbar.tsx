@@ -8,6 +8,8 @@ import {
   SignedIn,
   UserButton,
   useUser,
+  ClerkLoading,
+  ClerkLoaded,
 } from "@clerk/nextjs"
 import Link from "next/link"
 import { Button } from "./ui/button"
@@ -15,8 +17,8 @@ import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
 import { Menu } from "lucide-react"
 
 function Navbar() {
-  const router = useRouter();
-  const { isLoaded, isSignedIn } = useUser();
+  const router = useRouter()
+  const { isLoaded, isSignedIn } = useUser()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -30,7 +32,7 @@ function Navbar() {
 
   const path = usePathname()
   if (path === "/hacked") return null
-  if (!isLoaded) return null;
+  /* if (!isLoaded) return null */
 
   return (
     <nav className="bg-riskbg h-16">
@@ -61,19 +63,30 @@ function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <div
-                className=" text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
-                id="underlinepls"
-              >
-                <SignedOut>
-                  <SignInButton forceRedirectUrl={"/dashboard/"}>
-                    Se connecter
-                  </SignInButton>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-              </div>
+              <ClerkLoading>
+                <p
+                  className={
+                    "text-white hover:underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                  }
+                >
+                  Se connecter
+                </p>
+              </ClerkLoading>
+              <ClerkLoaded>
+                <div
+                  className=" text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                  id="underlinepls"
+                >
+                  <SignedOut>
+                    <SignInButton forceRedirectUrl={"/dashboard/"}>
+                      Se connecter
+                    </SignInButton>
+                  </SignedOut>
+                  <SignedIn>
+                    <UserButton />
+                  </SignedIn>
+                </div>
+              </ClerkLoaded>
             </div>
           </div>
           <div className="md:hidden flex items-center">

@@ -3,7 +3,11 @@
 import { ComponentType, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import { ChevronRight } from "lucide-react"
 import dynamic from "next/dynamic"
 import Landing from "./courses/landing"
@@ -20,7 +24,11 @@ const categories = [
       },
       {
         name: "Backend",
-        courses: ["Node.js Essentials", "Express.js Framework", "Database Design"],
+        courses: [
+          "Node.js Essentials",
+          "Express.js Framework",
+          "Database Design",
+        ],
       },
     ],
   },
@@ -33,7 +41,11 @@ const categories = [
       },
       {
         name: "Machine Learning",
-        courses: ["Supervised Learning", "Unsupervised Learning", "Deep Learning Basics"],
+        courses: [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Deep Learning Basics",
+        ],
       },
     ],
   },
@@ -46,7 +58,11 @@ const categories = [
       },
       {
         name: "UX/UI",
-        courses: ["UI/UX Principles", "Figma for Designers", "User Research Methods"],
+        courses: [
+          "UI/UX Principles",
+          "Figma for Designers",
+          "User Research Methods",
+        ],
       },
     ],
   },
@@ -54,27 +70,37 @@ const categories = [
 
 export default function Component() {
   const [selectedCourse, setSelectedCourse] = useState<string>("landing")
-  const [openCategories, setOpenCategories] = useState<{ [key: string]: boolean }>({})
-  const [openSubcategories, setOpenSubcategories] = useState<{ [key: string]: boolean }>({})
+  const [openCategories, setOpenCategories] = useState<{
+    [key: string]: boolean
+  }>({})
+  const [openSubcategories, setOpenSubcategories] = useState<{
+    [key: string]: boolean
+  }>({})
 
   const toggleCategory = (categoryName: string) => {
-    setOpenCategories((prev) => ({ ...prev, [categoryName]: !prev[categoryName] }))
+    setOpenCategories((prev) => ({
+      ...prev,
+      [categoryName]: !prev[categoryName],
+    }))
   }
 
   const toggleSubcategory = (subcategoryName: string) => {
-    setOpenSubcategories((prev) => ({ ...prev, [subcategoryName]: !prev[subcategoryName] }))
+    setOpenSubcategories((prev) => ({
+      ...prev,
+      [subcategoryName]: !prev[subcategoryName],
+    }))
   }
 
   const courseComponents = {
     Phishing: Phishing,
     landing: Landing,
-
     "JavaScript Fundamentals": JS,
   }
 
   const renderCourseContent = () => {
     if (!selectedCourse) return null
-    const CourseComponent = courseComponents[selectedCourse as keyof typeof courseComponents]
+    const CourseComponent =
+      courseComponents[selectedCourse as keyof typeof courseComponents]
     return CourseComponent ? (
       <CourseComponent />
     ) : (
@@ -97,8 +123,13 @@ export default function Component() {
                 onOpenChange={() => toggleCategory(category.name)}
               >
                 <CollapsibleTrigger asChild>
-                  <Button variant="ghost" className="flex w-full items-center justify-between p-4 font-medium">
-                    <span className="text-left truncate mr-2  font-bold">{category.name}</span>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full items-center justify-between p-4 font-medium"
+                  >
+                    <span className="text-left truncate mr-2  font-bold">
+                      {category.name}
+                    </span>
                     <ChevronRight
                       className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
                         openCategories[category.name] ? "rotate-90" : ""
@@ -119,10 +150,14 @@ export default function Component() {
                           variant="ghost"
                           className="flex w-full items-center justify-between p-2 pl-6 text-sm font-medium"
                         >
-                          <span className="text-left truncate mr-2">{subcategory.name}</span>
+                          <span className="text-left truncate mr-2">
+                            {subcategory.name}
+                          </span>
                           <ChevronRight
                             className={`h-3 w-3 flex-shrink-0 transition-transform duration-200 ${
-                              openSubcategories[subcategory.name] ? "rotate-90" : ""
+                              openSubcategories[subcategory.name]
+                                ? "rotate-90"
+                                : ""
                             }`}
                           />
                         </Button>
@@ -134,7 +169,9 @@ export default function Component() {
                               <Button
                                 variant="ghost"
                                 className={`w-full justify-start text-sm p-2 pl-10 ${
-                                  selectedCourse === course ? " underline  " : ""
+                                  selectedCourse === course
+                                    ? " underline  "
+                                    : ""
                                 }`}
                                 onClick={() => setSelectedCourse(course)}
                               >
@@ -159,8 +196,12 @@ export default function Component() {
             renderCourseContent()
           ) : (
             <div>
-              <h1 className="text-2xl font-bold">Welcome to Your E-Learning Platform</h1>
-              <p className="mt-4">Select a course from the sidebar to begin learning.</p>
+              <h1 className="text-2xl font-bold">
+                Welcome to Your E-Learning Platform
+              </h1>
+              <p className="mt-4">
+                Select a course from the sidebar to begin learning.
+              </p>
             </div>
           )}
         </main>
