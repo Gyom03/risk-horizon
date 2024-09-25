@@ -6,12 +6,74 @@ import { Button } from "$/components/ui/button"
 
 import Countdown from "react-countdown"
 import { Metadata } from "next"
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from "$/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
+import { ClockIcon } from "lucide-react"
+
+const speakers = [
+  {
+    name: "Alexandre ZANNI",
+    role: "Hackeur éthique et développeur",
+    image: "/imgs/osi/person/1.jpg",
+    bio: "Ingénieur en cyberséucité, Alexandre Zanni est un hackeur éthique et contributeur du projet BlackArch linux, une distribution orientée sécurité.",
+    linkedin: "https://www.linkedin.com/in/alexandre-zanni/",
+  },
+  {
+    name: "Kevin CHEVREUIL",
+    role: "Fondateur de Kaisen Linux",
+    image: "/imgs/osi/person/2.jpg",
+    bio: "Habitué des systèmes d'exploitation libres et open source, Kevin CHEVREUIL est le fondateur de Kaisen Linux, un outil de sécurité informatique basé sur Debian. ",
+    linkedin: "https://www.linkedin.com/in/kevinchevreuil/",
+  },
+  {
+    name: "Laurent MINNE",
+    role: "Senior Cyber Security Engineer",
+    image: "/imgs/osi/person/3.jpg",
+    bio: "Fondateur de Be.Cyber, un groupe d'hackeur éthique, Laurent Minne est une figure de la cybersécurité sur Linkedin notamment grâce à ses publications autour de la cybersecurité.",
+    linkedin: "https://www.linkedin.com/in/laurent-minne/",
+  },
+  {
+    name: "Jordan Saint-Ghislain",
+    role: "Cybersecurity Incident Response Manager",
+    image: "/imgs/osi/person/4.jpg",
+    bio: "Spécialiste des réponses au incidents de sécurité, Jordan Saint-Ghislain a pu notamment aider à la remise en fonction du CHwapi après une attaque de ransomware.",
+    linkedin: "https://www.linkedin.com/in/jordan-saint-ghislain/",
+  },
+]
+const schedule = [
+  { time: "10h00 - 11h00", event: " Accueil des Participants." },
+  {
+    time: "11h00 - 12h00",
+    event:
+      "1er conférence : Table de discussion sur l’open source et ses défis.",
+  },
+  {
+    time: "12h00 - 14h00",
+    event: "Pause : Bar ouvert et restauration.",
+  },
+  {
+    time: "14h00 - 15h00",
+    event:
+      "2ème conférence : Intervention de prévention aux attaques par ransomware.",
+  },
+  { time: "17h00 - 18h00", event: "Fin du salon." },
+]
 
 function Content() {
   const [countdown, setCountdown] = useState<JSX.Element>()
   useEffect(() => {
     setCountdown(
-      <Countdown date={new Date("2024-10-19T10:00:00")} className="  text-4xl text-white font-bold bg-black/50 p-2" />
+      <Countdown
+        date={new Date("2024-10-19T10:00:00")}
+        className="  text-4xl text-white font-bold bg-black/50 p-2"
+      />
     )
   }, [])
 
@@ -34,15 +96,20 @@ function Content() {
                 <div className="flex flex-col justify-center space-y-4 bg-black/60 p-10 rounded-2xl">
                   <div className="space-y-2">
                     <div className="flex">
-                      <img src="imgs/osi/logo_OSI_white.png" alt="OSI logo" className="object-cover w-64" />
+                      <img
+                        src="imgs/osi/logo_OSI_white.png"
+                        alt="OSI logo"
+                        className="object-cover w-64"
+                      />
                     </div>
 
                     <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
                       19 octobre 2024 | Mons, Belgique
                     </p>
                     <p className="max-w-[600px] !mt-6 text-white md:text-lg drop-shadow-lg ">
-                      Cette année, Risk Horizon organise le salon Open Source Immersion (OSI) dédié à la promotion de
-                      logiciels libres et open source.
+                      Cette année, Risk Horizon organise le salon Open Source
+                      Immersion (OSI) dédié à la promotion de logiciels libres
+                      et open source.
                     </p>
                   </div>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row !mt-6">
@@ -53,7 +120,12 @@ function Content() {
                       {"Plus d'infos"}
                     </Link>
 
-                    <Link href={"https://www.eventbrite.be/e/open-source-immersion-tickets-921737229867"} className="">
+                    <Link
+                      href={
+                        "https://www.eventbrite.be/e/open-source-immersion-tickets-921737229867"
+                      }
+                      className=""
+                    >
                       <Button className="bg-[#050537]">{"S'inscrire"}</Button>
                     </Link>
                   </div>
@@ -81,7 +153,8 @@ function Content() {
             </div>
             <div className="px-4">
               <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
-                Un salon pour les passionnés de logiciels <br /> libres et open source
+                Un salon pour les passionnés de logiciels <br /> libres et open
+                source
               </p>
               <p className="max-w-[600px] mt-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-md/relaxed dark:text-gray-400">
                 {
@@ -143,12 +216,78 @@ function Content() {
             </div>
           </div>
         </section>
+        <section className="mb-16 mx-32 mt-12 ">
+          <h3 className="text-3xl  font-bold tracking-tighter md:text-4xl/tight text-center mb-10 text-white pt-5">
+            Nos intervenants :
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {speakers.map((speaker, index) => (
+              <Card key={index} className="flex flex-col">
+                <CardHeader className="text-center">
+                  <Avatar className="w-24 h-24 mx-auto mb-4 !rounded-full roundedpls">
+                    <AvatarImage
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="hover:scale-110 duration-300"
+                    />
+                    <AvatarFallback>
+                      {speaker.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </AvatarFallback>
+                  </Avatar>
+                  <CardTitle>{speaker.name}</CardTitle>
+                  <p className="text-sm text-muted-foreground">
+                    {speaker.role}
+                  </p>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-sm text-muted-foreground">{speaker.bio}</p>
+                </CardContent>
+                <CardFooter className="flex justify-center">
+                  <Button className="bg-[#0e76a8] hover:bg-[#0d5080]">
+                    <Link href={speaker.linkedin}>{"Linkedin"}</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+        <section className="mb-12 mx-4">
+          <h3 className="text-3xl  font-bold tracking-tighter md:text-4xl/tight text-center mb-10 text-white pt-5">
+            Programme de la journée :
+          </h3>
+          <Card className="max-w-4xl mx-auto">
+            <CardContent className="p-0 !rounded-lg">
+              <table className="w-full !rounded-lg">
+                <thead className="bg-muted !rounded-lg">
+                  <tr>
+                    <th className="px-4 py-2 text-left">Time</th>
+                    <th className="px-4 py-2 text-left">Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {schedule.map((item, index) => (
+                    <tr key={index} className="border-t border-muted">
+                      <td className="px-4 py-2 flex items-center">
+                        <ClockIcon className="mr-2 h-4 w-4 text-muted-foreground" />
+                        {item.time}
+                      </td>
+                      <td className="px-4 py-2">{item.event}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        </section>
 
         <section className="bg-muted mt-20 pb-5 md:pb-0">
           <div>
-            <p className="text-3xl text-black font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
+            <h3 className="text-3xl text-black font-bold tracking-tighter md:text-4xl/tight text-center pt-5">
               Nos partenaires majeurs :
-            </p>
+            </h3>
             <div className="flex flex-wrap justify-center items-center gap-0 md:gap-14">
               <div className="w-[200px] md:w-[300px] aspect-video md:aspect-square flex justify-center items-center hover:scale-110 duration-500 scale-[1.1] md:scale-[1]">
                 <Link href={"https://www.heh.be/"}>
@@ -323,17 +462,30 @@ function Content() {
         </section>
         <section className="mt-20">
           <div className="flex flex-col p-4 bg-[#020222] max-w-[400px] justify-center mx-auto">
-            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">Informations :</p>
-            <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400 mb-3">19 octobre 2024 - 10H à 18H</p>
+            <p className="text-3xl text-white font-bold tracking-tighter md:text-4xl/tight ">
+              Informations :
+            </p>
+            <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400 mb-3">
+              19 octobre 2024 - 10H à 18H
+            </p>
             <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
               8 Avenue Victor Maistriau, 7000 Mons
             </p>
-            <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">Haute École en Hainaut,</p>
+            <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
+              Haute École en Hainaut,
+            </p>
             <p className="max-w-[600px] text-white md:text-xl dark:text-gray-400">
               Département sciences et technologies
             </p>
-            <Link href={"https://www.eventbrite.be/e/open-source-immersion-tickets-921737229867"} className="mx-auto">
-              <Button className="mt-6 mx-auto p-6 text-xl bg-white hover:bg-gray-400 text-black">{"S'inscrire"}</Button>
+            <Link
+              href={
+                "https://www.eventbrite.be/e/open-source-immersion-tickets-921737229867"
+              }
+              className="mx-auto"
+            >
+              <Button className="mt-6 mx-auto p-6 text-xl bg-white hover:bg-gray-400 text-black">
+                {"S'inscrire"}
+              </Button>
             </Link>
           </div>
         </section>

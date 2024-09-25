@@ -101,3 +101,7 @@ h6 {
 .grecaptcha-badge {
   visibility: hidden !important;
 }
+
+.roundedpls > * {
+  border-radius: 999999px;
+}
