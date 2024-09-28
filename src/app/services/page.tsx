@@ -24,8 +24,8 @@ function Page() {
                 <CardContent>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>Configuration de réseaux sécurisés</li>
-                    <li>Installation d'Anti-virus / EDR</li>
-                    <li>Système de détection d'intrusion</li>
+                    <li>{"Installation d'Anti-virus / EDR"}</li>
+                    <li>{"Système de détection d'intrusion"}</li>
                     <li>Installation de matériels informatique</li>
                     <li>Analyse de risque</li>
                   </ul>
