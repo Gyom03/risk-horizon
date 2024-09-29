@@ -2,15 +2,7 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import {
-  SignedOut,
-  SignInButton,
-  SignedIn,
-  UserButton,
-  useUser,
-  ClerkLoading,
-  ClerkLoaded,
-} from "@clerk/nextjs"
+import { SignedOut, SignInButton, SignedIn, UserButton, useUser, ClerkLoading, ClerkLoaded } from "@clerk/nextjs"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
@@ -18,7 +10,6 @@ import { Menu } from "lucide-react"
 
 function Navbar() {
   const router = useRouter()
-  const { isLoaded, isSignedIn } = useUser()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -26,8 +17,8 @@ function Navbar() {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
     { name: "Contact", href: "/Contact" },
+    { name: "E-learning", href: "/elearning" },
     { name: "OSI 2024", href: "/OSI" },
-    { name: "(Dashboard)", href: "/dashboard" },
   ]
 
   const path = usePathname()
@@ -78,9 +69,7 @@ function Navbar() {
                   id="underlinepls"
                 >
                   <SignedOut>
-                    <SignInButton forceRedirectUrl={"/dashboard/"}>
-                      Se connecter
-                    </SignInButton>
+                    <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                   </SignedOut>
                   <SignedIn>
                     <UserButton />
@@ -111,9 +100,7 @@ function Navbar() {
                   ))}
                   <div className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium">
                     <SignedOut>
-                      <SignInButton forceRedirectUrl={"/dashboard/"}>
-                        Se connecter
-                      </SignInButton>
+                      <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
                     </SignedOut>
                     <SignedIn>
                       <UserButton />

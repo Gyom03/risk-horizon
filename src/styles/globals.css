@@ -33,7 +33,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
   }
 
   .dark {
@@ -105,21 +104,27 @@ h6 {
   visibility: hidden !important;
 }
 
-
 @layer utilities {
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
 
-.underline-offset-6 {
+  .underline-offset-6 {
     text-underline-offset: 6px;
   }
 
-.underline-offset-8 {
+  .underline-offset-8 {
     text-underline-offset: 8px;
   }
 
-.underline-offset-10 {
+  .underline-offset-10 {
     text-underline-offset: 10px;
   }
+}
+
+.tree-text * {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: left;
+  text-wrap: nowrap;
 }
