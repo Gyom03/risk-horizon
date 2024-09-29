@@ -62,7 +62,7 @@ export async function POST(request: Request, response: Response) {
       from: "form@risk-horizon.be",
       to: "info@risk-horizon.be",
       subject: "Form : New submission from " + name,
-      html: "<p>From: " + name + " (" + email + ")</p><p>Subject: " + subject + "</p><p>Message: " + message + "</p>",
+      html: "<p>From: " + name + " (" + email + ")</p><p>Subject: " + subject + "</p><p>Message: " + message + "</p>"
     })
     console.log("email sent to " + data2)
 
