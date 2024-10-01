@@ -4,10 +4,12 @@ import { Resend } from "resend"
 import { z } from "zod"
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
-const schema = z.object({
-  id: z.number(),
-  text: z.string().min(2),
-})
+interface Elements {
+  id: string
+  isSelectable: boolean
+  name: string
+  children?: Elements[]
+}
 
 export async function POST(request: Request, response: Response) {
   const { sessionClaims } = auth()
@@ -16,18 +18,10 @@ export async function POST(request: Request, response: Response) {
   }
 
   const postData = await request.json()
-  const result = schema.safeParse(postData)
-
-  if (!result.success) return new Response("Invalid data", { status: 400 })
-  const { id, text } = result.data
-  const test = await db.courses.upsert({
-    where: { id: Number(id) },
-    update: {
-      Content: text,
-    },
-    create: {
-      id: Number(id),
-      Content: text,
+  console.log(postData.content)
+  const test = await db.coursesLayout.create({
+    data: {
+      Content: postData.content,
     },
   })
 

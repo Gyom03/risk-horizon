@@ -32,11 +32,15 @@ import axios from "axios"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Pen, X } from "lucide-react"
+import { useClerk } from "@clerk/nextjs"
+
 interface EditorProps {
   id: number
 }
 
 export default function Editor({ id }: EditorProps) {
+  const { session } = useClerk()
+  console.log()
   const [isEditing, setIsEditing] = useState(false)
 
   const editor = useMemo(() => createYooptaEditor(), [isEditing])
@@ -148,26 +152,29 @@ export default function Editor({ id }: EditorProps) {
   console.error = (...args) => {
     if (
       typeof args[0] === "string" &&
-      (args[0].includes("Warning: Prop") || args[0].includes("[Report Only]"))
+      (args[0].includes("Warning: Prop") ||
+        args[0].includes("[Report Only]") ||
+        args[0].includes("Warning: Input contains an input"))
     ) {
       return
     }
     originalConsoleError(...args)
   }
-
   return (
     <>
       <div className="absolute right-10 top-10 ">
-        <Button
-          onClick={() => {
-            if (isEditing) {
-              exportHTML()
-            }
-            setIsEditing(!isEditing)
-          }}
-        >
-          {isEditing ? <X /> : <Pen />}
-        </Button>
+        {session?.user.publicMetadata.role == "admin" && (
+          <Button
+            onClick={() => {
+              if (isEditing) {
+                exportHTML()
+              }
+              setIsEditing(!isEditing)
+            }}
+          >
+            {isEditing ? <X /> : <Pen />}
+          </Button>
+        )}
       </div>
       <YooptaEditor
         editor={editor}
