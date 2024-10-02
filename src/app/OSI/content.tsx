@@ -14,15 +14,15 @@ import {
   CardFooter,
   CardTitle,
 } from "$/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "$/components/ui/avatar"
 import { ClockIcon } from "lucide-react"
 
 const speakers = [
   {
     name: "Alexandre ZANNI",
-    role: "Hackeur éthique et développeur",
-    image: "/imgs/osi/person/1.jpg",
-    bio: "Ingénieur en cyberséucité, Alexandre Zanni est un hackeur éthique et contributeur du projet BlackArch linux, une distribution orientée sécurité.",
+    role: "Hackeur éthique et contributeur FLOSS",
+    image: "/imgs/osi/person/5.jpg",
+    bio: "Alexandre est Ingénieur en test d'intrusion, mais aussi un contributeur prolifique à de nombreux projets open-source liés à la cybersécurité (BlackArch, RubyFu, etc..).",
     linkedin: "https://www.linkedin.com/in/alexandre-zanni/",
   },
   {
