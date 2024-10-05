@@ -132,3 +132,28 @@ h6 {
 .testtt {
   width: min-content !important;
 }
+
+/* Je hais Bootstrap */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}
