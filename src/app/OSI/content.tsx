@@ -1,21 +1,19 @@
 "use client"
-import React, { useEffect, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
 import { Button } from "$/components/ui/button"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
-import Countdown from "react-countdown"
-import { Metadata } from "next"
+import { Avatar, AvatarFallback, AvatarImage } from "$/components/ui/avatar"
 import {
   Card,
-  CardHeader,
   CardContent,
-  CardDescription,
   CardFooter,
+  CardHeader,
   CardTitle,
 } from "$/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "$/components/ui/avatar"
 import { ClockIcon } from "lucide-react"
+import Countdown from "react-countdown"
 
 const speakers = [
   {
@@ -36,7 +34,7 @@ const speakers = [
     name: "Laurent MINNE",
     role: "Senior Cyber Security Engineer",
     image: "/imgs/osi/person/3.jpg",
-    bio: "Fondateur de Be.Cyber, un groupe d'hackeur éthique, Laurent Minne est une figure de la cybersécurité sur Linkedin notamment grâce à ses publications autour de la cybersecurité.",
+    bio: "Fondateur de Guardians of Cyber, un groupe d'hackeur éthique, Laurent Minne est une figure de la cybersécurité sur Linkedin notamment grâce à ses publications autour de la cybersecurité.",
     linkedin: "https://www.linkedin.com/in/laurent-minne/",
   },
   {
@@ -454,6 +452,17 @@ function Content() {
                     height={300}
                     src="/imgs/osi/logo/kaisen.png"
                     width={300}
+                  />
+                </Link>
+              </div>
+              <div className="mx-10 md:mx-0 w-[200px] md:w-[250px] aspect-video md:aspect-square flex justify-center items-center">
+                <Link href={"https://kaisenlinux.org/"}>
+                  <Image
+                    alt="Image 1"
+                    className="object-cover hover:scale-110 duration-500 "
+                    height={200}
+                    src="/imgs/osi/logo/beforensic.png"
+                    width={200}
                   />
                 </Link>
               </div>
