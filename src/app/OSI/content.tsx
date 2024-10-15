@@ -61,6 +61,10 @@ const schedule = [
     event:
       "2ème conférence : Intervention de prévention aux attaques par ransomware.",
   },
+  {
+    time: "15h00 - 16h00",
+    event: "3ème conférence : Logiciel Libre & Cybersécurité",
+  },
   { time: "17h00 - 18h00", event: "Fin du salon." },
 ]
 
