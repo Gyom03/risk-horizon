@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import TreeEditorDemo from "./bs-tree"
 import Editor from "./editor"
 // Mock data for categories and nested courses
@@ -11,10 +11,14 @@ interface props {
 
 export default function Component({ treeData }: props) {
   const [selectedID, setselectedid] = useState<string>("0") // Renamed to `setSelectedID`
+  const [isClient, setIsClient] = useState(false)
 
   console.log(selectedID)
   //a recursive function to find the element with the corresponding id in the tree and add a new course to it
 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   return (
     <div className="flex h-screen bg-background w-full">
       <div className="flex h-screen bg-background !w-full">
@@ -22,7 +26,7 @@ export default function Component({ treeData }: props) {
           <TreeEditorDemo treeData={treeData} setselectedid={setselectedid} />
         </aside>
         <main className="flex-1 overflow-auto p-6 relative !w-full ">
-          <Editor id={selectedID} />
+          {isClient && <Editor id={selectedID} />}
         </main>
       </div>
     </div>
@@ -97,7 +101,20 @@ let ELEMENTS: Elements[] = [
   },
 ]
 
-let initialExpandedItems = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "300"]
+let initialExpandedItems = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "300",
+]
 
 export const demoTreeData = {
   title: "root",

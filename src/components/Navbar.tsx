@@ -2,7 +2,15 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { SignedOut, SignInButton, SignedIn, UserButton, useUser, ClerkLoading, ClerkLoaded } from "@clerk/nextjs"
+import {
+  SignedOut,
+  SignInButton,
+  SignedIn,
+  UserButton,
+  useUser,
+  ClerkLoading,
+  ClerkLoaded,
+} from "@clerk/nextjs"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"
@@ -12,6 +20,7 @@ function Navbar() {
   const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
+  const { isLoaded } = useUser()
 
   const navItems = [
     { name: "Accueil", href: "/" },
@@ -54,7 +63,21 @@ function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <ClerkLoading>
+              {isLoaded ? (
+                <div
+                  className=" text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
+                  id="underlinepls"
+                >
+                  <SignedOut>
+                    <SignInButton forceRedirectUrl={"/dashboard/"}>
+                      Se connecter
+                    </SignInButton>
+                  </SignedOut>
+                  <SignedIn>
+                    <UserButton />
+                  </SignedIn>
+                </div>
+              ) : (
                 <p
                   className={
                     "text-white hover:underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
@@ -62,20 +85,7 @@ function Navbar() {
                 >
                   Se connecter
                 </p>
-              </ClerkLoading>
-              <ClerkLoaded>
-                <div
-                  className=" text-white !underline underline-offset-8  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium"
-                  id="underlinepls"
-                >
-                  <SignedOut>
-                    <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
-                  </SignedOut>
-                  <SignedIn>
-                    <UserButton />
-                  </SignedIn>
-                </div>
-              </ClerkLoaded>
+              )}
             </div>
           </div>
           <div className="md:hidden flex items-center">
@@ -100,7 +110,9 @@ function Navbar() {
                   ))}
                   <div className="text-white hover:underline  px-3 mr-1 py-2 text-[18px] text-nowrap font-medium">
                     <SignedOut>
-                      <SignInButton forceRedirectUrl={"/dashboard/"}>Se connecter</SignInButton>
+                      <SignInButton forceRedirectUrl={"/dashboard/"}>
+                        Se connecter
+                      </SignInButton>
                     </SignedOut>
                     <SignedIn>
                       <UserButton />

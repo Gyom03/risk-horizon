@@ -157,3 +157,9 @@ h6 {
 .w-100 {
   width: 100%;
 }
+
+.yoopta-editor {
+  width: auto !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}

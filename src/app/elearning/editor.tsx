@@ -16,7 +16,14 @@ import Image from "@yoopta/image"
 import Link from "@yoopta/link"
 import LinkTool, { DefaultLinkToolRender } from "@yoopta/link-tool"
 import { BulletedList, NumberedList, TodoList } from "@yoopta/lists"
-import { Bold, CodeMark, Highlight, Italic, Strike, Underline } from "@yoopta/marks"
+import {
+  Bold,
+  CodeMark,
+  Highlight,
+  Italic,
+  Strike,
+  Underline,
+} from "@yoopta/marks"
 import Paragraph from "@yoopta/paragraph"
 import Table from "@yoopta/table"
 import Toolbar, { DefaultToolbarRender } from "@yoopta/toolbar"
@@ -154,7 +161,6 @@ export default function Editor({ id }: EditorProps) {
     originalConsoleError(...args)
   }
   return (
-    // @ts-ignore
     <>
       <div className="absolute right-10 top-10 ">
         {session?.user.publicMetadata.role == "admin" && (
