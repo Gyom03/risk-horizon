@@ -15,7 +15,7 @@ model CoursesLayout {
 }
 
 model Courses {
-  id          Int      @id
+  id          String   @id @default(uuid())
   Content     String   @db.Text
   dateCreated DateTime @default(now())
   updatedAt   DateTime @updatedAt

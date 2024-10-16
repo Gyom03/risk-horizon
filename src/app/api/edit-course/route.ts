@@ -5,7 +5,7 @@ import { z } from "zod"
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
 const schema = z.object({
-  id: z.number(),
+  id: z.string(),
   text: z.string().min(2),
 })
 
@@ -21,12 +21,12 @@ export async function POST(request: Request, response: Response) {
   if (!result.success) return new Response("Invalid data", { status: 400 })
   const { id, text } = result.data
   const test = await db.courses.upsert({
-    where: { id: Number(id) },
+    where: { id: id },
     update: {
       Content: text,
     },
     create: {
-      id: Number(id),
+      id: id,
       Content: text,
     },
   })

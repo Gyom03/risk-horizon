@@ -18,10 +18,23 @@ export async function POST(request: Request, response: Response) {
   }
 
   const postData = await request.json()
-  console.log(postData.content)
+  const tojson = JSON.parse(postData.content)
+
+  const oldCourse = await db.coursesLayout.findFirst({
+    take: 1,
+    orderBy: {
+      id: "desc",
+    },
+  })
+
+  if (oldCourse && JSON.stringify(oldCourse.Content) === JSON.stringify(tojson)) {
+    console.log("No changes detected")
+    return new Response("No changes detected", { status: 200 })
+  }
+
   const test = await db.coursesLayout.create({
     data: {
-      Content: postData.content,
+      Content: tojson,
     },
   })
 

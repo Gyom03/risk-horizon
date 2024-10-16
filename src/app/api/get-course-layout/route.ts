@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 
 export async function GET(request: NextRequest, response: Response) {
-  const course = await db.coursesLayout.findFirst({
+  const course = await db.coursesLayout.findMany({
     take: 1,
     orderBy: {
       id: "desc",
@@ -13,5 +13,5 @@ export async function GET(request: NextRequest, response: Response) {
     return NextResponse.json({ message: "Course not found" }, { status: 404 })
   }
 
-  return NextResponse.json(course)
+  return NextResponse.json(course[0])
 }

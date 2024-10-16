@@ -3,11 +3,12 @@ import { db } from "@/lib/db"
 
 export async function GET(request: NextRequest, response: Response) {
   const id = request.nextUrl.searchParams.get("id")
-  if (!id || isNaN(Number(id)))
-    return new Response("Invalid data", { status: 400 })
 
+  if (!id) {
+    return new Response("Invalid data", { status: 400 })
+  }
   const course = await db.courses.findUnique({
-    where: { id: Number(id) },
+    where: { id: id },
   })
 
   if (!course) {

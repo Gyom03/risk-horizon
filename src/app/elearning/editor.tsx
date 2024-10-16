@@ -1,46 +1,37 @@
 "use client"
-import YooptaEditor, { createYooptaEditor, YooEditor } from "@yoopta/editor"
-import { use, useEffect, useMemo } from "react"
-import Paragraph from "@yoopta/paragraph"
-import LinkTool, { DefaultLinkToolRender } from "@yoopta/link-tool"
+import { Button } from "@/components/ui/button"
+import { useClerk } from "@clerk/nextjs"
+import { useMutation, useQuery } from "@tanstack/react-query"
+import Accordion from "@yoopta/accordion"
 import ActionMenu, { DefaultActionMenuRender } from "@yoopta/action-menu-list"
-import Toolbar, { DefaultToolbarRender } from "@yoopta/toolbar"
-import {
-  Bold,
-  Highlight,
-  CodeMark,
-  Strike,
-  Underline,
-  Italic,
-} from "@yoopta/marks"
 import Blockquote from "@yoopta/blockquote"
+import Callout from "@yoopta/callout"
+import Code from "@yoopta/code"
+import Divider from "@yoopta/divider"
+import YooptaEditor, { createYooptaEditor } from "@yoopta/editor"
 import Embed from "@yoopta/embed"
+import { html } from "@yoopta/exports"
+import { HeadingOne, HeadingThree, HeadingTwo } from "@yoopta/headings"
 import Image from "@yoopta/image"
 import Link from "@yoopta/link"
-import Callout from "@yoopta/callout"
-import Video from "@yoopta/video"
-import Accordion from "@yoopta/accordion"
-import { NumberedList, BulletedList, TodoList } from "@yoopta/lists"
-import { HeadingOne, HeadingThree, HeadingTwo } from "@yoopta/headings"
-import Code from "@yoopta/code"
+import LinkTool, { DefaultLinkToolRender } from "@yoopta/link-tool"
+import { BulletedList, NumberedList, TodoList } from "@yoopta/lists"
+import { Bold, CodeMark, Highlight, Italic, Strike, Underline } from "@yoopta/marks"
+import Paragraph from "@yoopta/paragraph"
 import Table from "@yoopta/table"
-import Divider, { DividerCommands } from "@yoopta/divider"
-import { html } from "@yoopta/exports"
-import { useState } from "react"
-import { useMutation, useQuery } from "@tanstack/react-query"
+import Toolbar, { DefaultToolbarRender } from "@yoopta/toolbar"
+import Video from "@yoopta/video"
 import axios from "axios"
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
 import { Pen, X } from "lucide-react"
-import { useClerk } from "@clerk/nextjs"
+import { useEffect, useMemo, useState } from "react"
+import { toast } from "sonner"
 
 interface EditorProps {
-  id: number
+  id: string
 }
 
 export default function Editor({ id }: EditorProps) {
   const { session } = useClerk()
-  console.log()
   const [isEditing, setIsEditing] = useState(false)
 
   const editor = useMemo(() => createYooptaEditor(), [isEditing])
@@ -79,10 +70,6 @@ export default function Editor({ id }: EditorProps) {
     Video,
   ]
   const TOOLS = {
-    Toolbar: {
-      tool: Toolbar,
-      render: DefaultToolbarRender,
-    },
     ActionMenu: {
       tool: ActionMenu,
       render: DefaultActionMenuRender,
@@ -90,6 +77,10 @@ export default function Editor({ id }: EditorProps) {
     LinkTool: {
       tool: LinkTool,
       render: DefaultLinkToolRender,
+    },
+    Toolbar: {
+      tool: Toolbar,
+      render: DefaultToolbarRender,
     },
   }
 
@@ -111,6 +102,7 @@ export default function Editor({ id }: EditorProps) {
     },
   })
 
+  console.log(id)
   const { data, isError, refetch } = useQuery({
     queryKey: ["get-course"],
     queryFn: async () => {
@@ -151,16 +143,18 @@ export default function Editor({ id }: EditorProps) {
   const originalConsoleError = console.error
   console.error = (...args) => {
     if (
-      typeof args[0] === "string" &&
-      (args[0].includes("Warning: Prop") ||
-        args[0].includes("[Report Only]") ||
-        args[0].includes("Warning: Input contains an input"))
+      (typeof args[0] === "string" &&
+        (args[0].includes("Warning: Prop") ||
+          args[0].includes("[Report Only]") ||
+          args[0].includes("Warning: Input contains an input"))) ||
+      args[0].includes("Error: Hydration failed`")
     ) {
       return
     }
     originalConsoleError(...args)
   }
   return (
+    // @ts-ignore
     <>
       <div className="absolute right-10 top-10 ">
         {session?.user.publicMetadata.role == "admin" && (
@@ -182,7 +176,6 @@ export default function Editor({ id }: EditorProps) {
         tools={TOOLS}
         key={isEditing ? "editable" : "readonly"}
         marks={[Bold, Highlight, CodeMark, Strike, Underline, Italic]}
-        placeholder="Start typing here..."
         readOnly={!isEditing}
       />
     </>
