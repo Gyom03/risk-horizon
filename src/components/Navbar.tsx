@@ -12,7 +12,6 @@ const navigation = [
   { name: "Mission", href: "/Missions", current: false },
   { name: "À propos", href: "/about", current: false },
   { name: "Contact", href: "/Contact", current: false },
-  { name: "OSI 2024", href: "/OSI", current: false },
 ]
 
 function classNames(...classes: string[]) {
