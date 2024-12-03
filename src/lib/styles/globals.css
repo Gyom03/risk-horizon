@@ -105,3 +105,10 @@ h6 {
 .roundedpls > * {
   border-radius: 999999px;
 }
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}

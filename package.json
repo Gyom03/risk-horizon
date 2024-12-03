@@ -32,6 +32,7 @@
     "react-modal": "^3.16.1",
     "react-smart-masonry": "^2.0.2",
     "resend": "^3.5.0",
+    "risk-horizon": "file:",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
