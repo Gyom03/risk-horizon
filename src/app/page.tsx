@@ -23,8 +23,9 @@ export default function Component() {
                     Joignons nos forces pour garantir votre sécurité en ligne.
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Notre mission est de rendre le monde numérique plus sûr pour tous, quel que soit leur niveau de
-                    connaissance technologique.
+                    Notre mission est de rendre le monde numérique plus sûr pour
+                    tous, quel que soit leur niveau de connaissance
+                    technologique.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -45,35 +46,48 @@ export default function Component() {
         >
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nous faisons</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                Ce que nous faisons
+              </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Nous proposons une gamme de services pour aider les individus et les organisations à rester en sécurité
-                dans le monde numérique.
+                Nous proposons une gamme de services pour aider les individus et
+                les organisations à rester en sécurité dans le monde numérique.
               </p>
             </div>
             <div className="flex flex-col space-y-2 min-[400px]:space-y-4 lg:space-y-2 xl:space-y-4">
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Formation en cybersécurité</h3>
+                <h3 className="font-bold tracking-tight">
+                  Formation en cybersécurité
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Pour vous aider à mieux comprendre les menaces en ligne et à protéger vous ou votre entreprise
+                  Pour vous aider à mieux comprendre les menaces en ligne et à
+                  protéger vous ou votre entreprise
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Consultation en sécurité</h3>
+                <h3 className="font-bold tracking-tight">
+                  Consultation en sécurité
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {`Laissez notre équipe d'experts vous aider à renforcer votre sécurité en ligne en vous conseillant`}
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Analyse des Menaces</h3>
+                <h3 className="font-bold tracking-tight">
+                  Analyse des Menaces
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Nous réalisons des analyses de sécurité approfondies pour identifier les vulnérabilités potentielles
+                  Nous réalisons des analyses de sécurité approfondies pour
+                  identifier les vulnérabilités potentielles
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold tracking-tight">Protection des données</h3>
+                <h3 className="font-bold tracking-tight">
+                  Protection des données
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Apprenez à protéger vos données personnelles et professionnelles contre les cyberattaques
+                  Apprenez à protéger vos données personnelles et
+                  professionnelles contre les cyberattaques
                 </p>
               </div>
             </div>
@@ -124,9 +138,13 @@ export default function Component() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2 text-gray-50">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Qui sommes nous ?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                Qui sommes nous ?
+              </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                {"Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique."}
+                {
+                  "Découvrez l'équipe qui se cache derrière notre mission de sécurisation du monde numérique."
+                }
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -145,9 +163,15 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Guillaume Rosin</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Président et</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">analyste en cybersécurité</p>
+                  <h3 className="font-semibold text-gray-50">
+                    Guillaume Rosin
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Président et
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    analyste en cybersécurité
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -165,9 +189,15 @@ export default function Component() {
                   width={150}
                 />
                 <div className="mt-2 text-center">
-                  <h3 className="font-semibold text-gray-50">Guillaume Richard</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Co-Président et</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">analyste en cybersécurité </p>
+                  <h3 className="font-semibold text-gray-50">
+                    Guillaume Richard
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Co-Président et
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    analyste en cybersécurité{" "}
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -186,7 +216,9 @@ export default function Component() {
                 />
                 <div className="mt-2 text-center">
                   <h3 className="font-semibold text-gray-50">Alicia Bijnen</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Chargée de communication</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Chargée de communication
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -205,7 +237,9 @@ export default function Component() {
                 />
                 <div className="mt-2 text-center">
                   <h3 className="font-semibold text-gray-50">Yacine Ghris</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Juriste RGPD</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Consultant RGPD et cybersécurité
+                  </p>
                 </div>
               </div>
             </div>
@@ -242,8 +276,8 @@ const SkeletonOne = () => {
       <p className="font-bold text-4xl text-white">House in the woods</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of
-        city life.
+        A serene and tranquil retreat, this house in the woods offers a peaceful
+        escape from the hustle and bustle of city life.
       </p>
     </div>
   )
@@ -255,8 +289,9 @@ const SkeletonTwo = () => {
       <p className="font-bold text-4xl text-white">House above the clouds</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a unique living experience. It&apos;s a
-        place where the sky meets home, and tranquility is a way of life.
+        Perched high above the world, this house offers breathtaking views and a
+        unique living experience. It&apos;s a place where the sky meets home,
+        and tranquility is a way of life.
       </p>
     </div>
   )
@@ -267,8 +302,8 @@ const SkeletonThree = () => {
       <p className="font-bold text-4xl text-white">Greens all over</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the perfect place to relax, unwind, and enjoy
-        life.
+        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
+        perfect place to relax, unwind, and enjoy life.
       </p>
     </div>
   )
@@ -279,8 +314,8 @@ const SkeletonFour = () => {
       <p className="font-bold text-4xl text-white">Rivers are serene</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the perfect place to relax, unwind, and
-        enjoy life.
+        A house by the river is a place of peace and tranquility. It&apos;s the
+        perfect place to relax, unwind, and enjoy life.
       </p>
     </div>
   )

@@ -168,8 +168,10 @@ function Page() {
                   précisons si elles sont obligatoires ou facultatives au moment
                   de la collecte. Cette indication est marquée par un astérisque
                   (*). Si vous ne complétez pas un champ obligatoire, cela
-                  pourrait empêcher le traitement de votre demande. A qui sont
-                  transmises vos données personnelles ?
+                  pourrait empêcher le traitement de votre demande.
+                </p>
+                <p className="text-lg underline">
+                  A qui sont transmises vos données personnelles ?
                 </p>
                 <p>
                   Risk Horizon ASBL peut partager vos données personnelles avec
