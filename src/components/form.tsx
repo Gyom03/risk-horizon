@@ -217,6 +217,15 @@ function Form({ extended, className }: FormProps) {
             </div>
           </>
         )}
+        <p className="text-xs max-w-md mx-auto">
+          Les informations recueillies à partir de ce formulaire sont transmises
+          à notre service client pour répondre dans les meilleurs délais à votre
+          demande. Pour en savoir plus sur la gestion de vos données et vos
+          droits, cliquez ici :{" "}
+          <a href="/privacy-policy" className="underline text-gray-600">
+            Politique de confidentialité
+          </a>
+        </p>
       </div>
     </section>
   )
